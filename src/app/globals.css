@@ -1,8 +1,10 @@
 @import "tailwindcss";
-
+@plugin "daisyui";
 :root {
-  --background: #ffffff;
+  --background: #1F1F1F;
+  --background-secondary: #0F0F0F;
   --foreground: #171717;
+  --primary: #D6A354;
 }
 
 @theme inline {
@@ -10,6 +12,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +22,50 @@
   }
 }
 
+.my-masonry-grid {
+  display: flex;
+  margin-left: -16px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 16px; /* gutter size */
+  background-clip: padding-box;
+}
+
+.my-masonry-grid_column > div {
+  margin-bottom: 16px;
+}
+
+
+
+
+
+.background {
+  background: var(--background);
+}
+.background-secondary {
+  background: var(--background-secondary);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--background-secondary);
+}
+.bg-primary {
+  background: var(--primary);
+}
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: 0;
+}
+
+
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: white;
   font-family: Arial, Helvetica, sans-serif;
 }
