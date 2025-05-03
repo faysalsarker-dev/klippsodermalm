@@ -22,6 +22,32 @@
   }
 }
 
+
+
+
+
+/* styles/globals.css */
+
+/* Clip Path for Image */
+.clip-path-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px; 
+}
+
+.clip-path-image {
+  clip-path: path('M0,10,50 L 90 ,50 L 100 ,10 40 Z');
+  transition: all 0.3s ease-in-out;
+}
+
+/* Optional: Hover effect for image */
+.clip-path-image:hover {
+  transform: scale(1.05);
+  filter: brightness(0.9);
+}
+
+
+
 .my-masonry-grid {
   display: flex;
   margin-left: -16px; /* gutter size offset */

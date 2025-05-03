@@ -48,7 +48,7 @@ const Navbar = () => {
               />
             </svg>
           </button>
-          <Link href="/" className="btn btn-ghost text-xl">
+          <Link href="/" className="btn btn-ghost text-xl" legacyBehavior={false}>
             Klipp
           </Link>
         </div>
@@ -60,7 +60,9 @@ const Navbar = () => {
           <ul className="menu menu-horizontal gap-2">
             {navItems.map((item) => (
               <li key={item.path}>
-                <Link href={item.path} className={linkClass(item.path)}>
+                <Link href={item.path} 
+                aria-label={item.name}    
+                className={linkClass(item.path)}>
                   {item.name}
                 </Link>
               </li>
@@ -85,7 +87,7 @@ const Navbar = () => {
             <Link
               key={item.path}
               href={item.path}
-              onClick={() => setIsOpen(false)} // Close on click
+              aria-label={item.name}              onClick={() => setIsOpen(false)} // Close on click
               className={`block ${linkClass(item.path)}`}
             >
               {item.name}

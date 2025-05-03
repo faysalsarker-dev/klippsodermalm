@@ -7,8 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { Autoplay, Pagination } from "swiper/modules";
-import { Parallax, Background } from "react-parallax";
-import hero from "../Home/hero.jpg";
+import { Parallax } from "react-parallax";
 const testimonials = [
   {
     id: 1,
@@ -71,12 +70,7 @@ const Review = () => {
                 <div className="mt-auto">
                   <h3 className="font-semibold text-lg">{testimonial.name}</h3>
                   <div className="mt-1">
-                    <Rating
-                      initialRating={testimonial.rating}
-                      emptySymbol={<FaRegStar className="text-yellow-400" />}
-                      fullSymbol={<FaStar className="text-yellow-400" />}
-                      readonly
-                    />
+               
                   </div>
                 </div>
               </div>

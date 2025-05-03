@@ -1,6 +1,7 @@
 'use client';
-import React, { useState } from "react";
+import React from "react";
 import Masonry from "react-masonry-css";
+import Image from "next/image"; 
 
 const galleryImages = [
   { id: 1, url: "https://img.freepik.com/free-photo/charming-lady-has-nice-hairdo_8353-7608.jpg?t=st=1746079802~exp=1746083402~hmac=9cb8d5214a4f5ea7f2c6120a65cd315770180cc76f88b133dfa7518eb0702c89&w=740" },
@@ -17,49 +18,47 @@ const galleryImages = [
   { id: 12, url: "https://impro.usercontent.one/appid/oneComWsb/domain/klippsodermalm.com/media/klippsodermalm.com/onewebmedia/images%20(5).jpeg?etag=%222b64-669008c0%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=201,251&extract=0,25,200,201" },
 ];
 
-
 const breakpoints = {
-    default: 3,
-    1024: 2,
-    640: 1,
-  };
-  
-  const Gallery = () => {
-    const [showAll, setShowAll] = useState(false);
-    const visibleImages = showAll ? galleryImages : galleryImages.slice(0, 6);
-  
-    return (
-      <section className="px-6 sm:px-10 md:px-16 py-16  mx-auto">
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">Gallery</h2>
-        
-        <Masonry
-          breakpointCols={breakpoints}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column"
-        >
-          {visibleImages.map((image) => (
-            <div key={image.id} className="overflow-hidden rounded-2xl mb-4 shadow-md">
-                <img
-       src={image.url}
-       alt={`gallery-${image.id}`}
-       className="w-full object-cover"
-       style={{ display: 'block', width: '100%' }}
-     />
-            </div>
-          ))}
-        </Masonry>
-  
-        {/* Show More / Show Less Button */}
-        <div className="text-center mt-10">
-          <button
-            onClick={() => setShowAll(!showAll)}
-            className="px-6 py-2 text-white font-medium bg-black hover:bg-gray-800 transition rounded-full shadow-lg"
+  default: 6,
+  1024: 5,
+  640: 3,
+};
+
+const Gallery = () => {
+  return (
+    <section className="px-6 sm:px-10 md:px-16 py-16 mx-auto">
+      <h2 className="text-4xl font-bold text-center mb-12">Gallery</h2>
+
+      <Masonry
+        breakpointCols={breakpoints}
+        className="my-masonry-grid"
+        columnClassName="my-masonry-grid_column"
+      >
+        {galleryImages.map((image) => (
+          <div
+            key={image.id}
+            className="overflow-hidden rounded-xl mb-6 shadow-lg transform hover:scale-105 transition-transform duration-300"
           >
-            {showAll ? "Show Less" : "Show More"}
-          </button>
-        </div>
-      </section>
-    );
-  };
-  
-  export default Gallery;
+            <Image
+              src={image.url}
+              alt={`gallery-image-${image.id}`}
+              width={500} 
+              height={500} 
+              className="w-full object-cover rounded-xl"
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </Masonry>
+
+      {/* Optional Show More / Show Less Button */}
+      {/* <div className="text-center mt-6">
+        <button className="text-primary hover:text-primary-dark transition-all duration-300">
+          Show More
+        </button>
+      </div> */}
+    </section>
+  );
+};
+
+export default Gallery;
