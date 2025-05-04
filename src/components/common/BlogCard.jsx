@@ -13,13 +13,13 @@ export default function BlogCard() {
     }
     
   return (
-    <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition duration-300">
+    <div className="card bg-background-secondary shadow-xl hover:shadow-2xl transition duration-300 p-2">
       <figure className="relative w-full h-48">
         <Image
           src={blog.image}
           alt={blog.title}
           fill
-          className="object-cover rounded-t-xl"
+          className="object-cover rounded-xl"
           sizes="(max-width: 768px) 100vw, 33vw"
         />
       </figure>

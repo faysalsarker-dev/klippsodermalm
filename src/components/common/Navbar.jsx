@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -16,86 +18,162 @@ const Navbar = () => {
   ];
 
   const linkClass = (path) =>
-    ` rounded-md ${
+    `block px-4 py-2 text-base font-medium rounded-md ${
       pathname === path
-        ? 'text-primary font-bold '
-        : 'hover:text-primary hover:text-base-200'
+        ? 'text-primary font-bold'
+        : ' hover:text-primary'
     }`;
 
   return (
-    <div className="">
-      <div className="navbar max-w-7xl mx-auto px-4">
-        {/* Mobile drawer button */}
-        <div className="navbar-start ">
-          <button
-         
-            onClick={() => setIsOpen(!isOpen)}
-            className="btn btn-ghost lg:hidden"
-            aria-label="Toggle Menu"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
+    <header className="w-full shadow-sm text-white ">
+      <div className="navbar max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+        {/* Left: Logo & Hamburger */}
+        <div className="flex items-center gap-2">
+       
+
+          <Link href="/" className="flex items-center">
+            <div className="relative w-32 h-10">
+              <Image
+                src="/klippsodermalm.png"
+                alt="klippsodermalm"
+                fill
+                className="object-contain"
+                priority
               />
-            </svg>
-          </button>
-          <Link href="/" className="btn btn-ghost text-xl" legacyBehavior={false}>
-            Klipp
+            </div>
           </Link>
         </div>
 
-    
-
-        {/* Desktop Menu */}
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal gap-2">
-            {navItems.map((item) => (
-              <li key={item.path}>
-                <Link href={item.path} 
-                aria-label={item.name}    
-                className={linkClass(item.path)}>
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Contact Button */}
-        <div className="navbar-end">
-          <Link href="/contact">
-            <button className="px-4 py-1 btn-primary text-white rounded-full">
-              Contact
-            </button>
-          </Link>
-        </div>
-      </div>
-
-      {/* Mobile Drawer Menu */}
-      {isOpen && (
-        <div className="lg:hidden bg-base-100 shadow-md p-4 space-y-2">
+        {/* Center: Desktop Nav */}
+        <nav className="hidden lg:flex gap-6">
           {navItems.map((item) => (
             <Link
               key={item.path}
               href={item.path}
-              aria-label={item.name}              onClick={() => setIsOpen(false)} // Close on click
-              className={`block ${linkClass(item.path)}`}
+              className={linkClass(item.path)}
+              aria-label={item.name}
             >
               {item.name}
             </Link>
           ))}
+        </nav>
+
+        {/* Right: CTA */}
+        <div className="hidden lg:flex">
+          <Link href="/contact">
+            <button className="px-4 py-1 bg-primary text-white rounded-full shadow hover:opacity-90 transition">
+              Contact
+            </button>
+          </Link>
         </div>
-      )}
-    </div>
+
+        <button
+  onClick={() => setIsOpen(!isOpen)}
+  className="lg:hidden p-2"
+  aria-label="Toggle Menu"
+>
+  <AnimatePresence mode="wait">
+    {isOpen ? (
+      <motion.svg
+        key="close"
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        initial={{ rotate: -90, opacity: 0 }}
+        animate={{ rotate: 0, opacity: 1 }}
+        exit={{ rotate: 90, opacity: 0 }}
+        transition={{ duration: 0.2 }}
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </motion.svg>
+    ) : (
+      <motion.svg
+        key="hamburger"
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-6 w-6 "
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        initial={{ rotate: 90, opacity: 0 }}
+        animate={{ rotate: 0, opacity: 1 }}
+        exit={{ rotate: -90, opacity: 0 }}
+        transition={{ duration: 0.2 }}
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+      </motion.svg>
+    )}
+  </AnimatePresence>
+</button>
+
+      </div>
+
+      {/* Mobile Drawer */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            <motion.div
+              initial={{ x: '-100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '-100%' }}
+              transition={{ duration: 0.3 }}
+              className="fixed top-0 left-0 w-64 h-full bg-background shadow-lg z-50 p-5 flex flex-col gap-4"
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setIsOpen(false)}
+                className="self-end"
+                aria-label="Close Menu"
+              >
+                ✕
+              </button>
+
+              {/* Nav Items */}
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  onClick={() => setIsOpen(false)}
+                  className={linkClass(item.path)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+
+              {/* CTA on mobile */}
+              <Link href="/contact">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="w-full mt-4 px-4 py-2 bg-primary text-white rounded-full shadow hover:opacity-90 transition"
+                >
+                  Contact
+                </button>
+              </Link>
+            </motion.div>
+
+            {/* Overlay */}
+            <motion.div
+              onClick={() => setIsOpen(false)}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.4 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black z-40 cursor-pointer"
+            />
+          </>
+        )}
+      </AnimatePresence>
+    </header>
   );
 };
 

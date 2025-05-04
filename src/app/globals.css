@@ -13,6 +13,8 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-primary: var(--primary);
+  --color-background-primary: var(--background);
+  --color-background-secondary: var(--background-secondary);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -66,23 +68,10 @@
 
 
 
-.background {
-  background: var(--background);
-}
-.background-secondary {
-  background: var(--background-secondary);
-}
 
-.text-primary {
-  color: var(--primary);
-}
 
-.text-secondary {
-  color: var(--background-secondary);
-}
-.bg-primary {
-  background: var(--primary);
-}
+
+
 .btn-primary {
   background: var(--primary);
   color: white;

@@ -1,54 +1,68 @@
-
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Services() {
-
-
-const services = [
+  const services = [
     {
-      name: "Haircuts",
-      description: "Sharp fades, modern styles, and classic cuts by skilled barbers.",
-      icon: "💈",
+      name: "Needle Piercing",
+      description: "Precise and hygienic needle piercings performed with expert technique for a clean, professional result.",
+      icon: "/needls.png",
     },
     {
-      name: "Piercing",
-      description: "Safe, stylish piercings with sterile techniques and bold precision.",
-      icon: "🧿",
+      name: "Gun Piercing",
+      description: "Quick and stylish piercings using sterilized piercing guns for a safe and trendy experience.",
+      icon: "/gun.png",
     },
     {
       name: "Microneedling",
-      description: "Revitalize your skin with professional-grade microneedling treatments.",
-      icon: "🧴",
+      description: "Boost skin health and glow with advanced microneedling sessions tailored for rejuvenation.",
+      icon: "/microneedls.png",
     },
   ];
 
-
   return (
-    <section className="py-16 px-4 background-secondary " >
+    <section className="py-16 px-4 bg-background-secondary text-white h-screen flex items-center">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-4 tracking-wide">Our Services</h2>
-        <p className="text-lg mb-10 ">Precision. Style. Professional Care.</p>
+        <motion.h2
+          className="text-4xl font-bold mb-4 tracking-wide"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          Specialized Piercing & Skin Care
+        </motion.h2>
+        <motion.p
+          className="text-lg mb-12 text-muted-foreground"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+        >
+          Discover expert services designed for precision, safety, and personal expression.
+        </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {/* Haircut Service */}
-
-
-
-
-          {
-            services.map((service, index) => (
-              <div key={index} className="background shadow-lg border border-neutral-700 hover:shadow-xl transition">
-                <div className="card-body items-center text-center">
-                  <div className="text-5xl mb-4">{service.icon}</div>
-                  <h3 className="card-title text-xl font-semibold">{service.name}</h3>
-                  <p className="text-sm ">{service.description}</p>
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              className="bg-background border border-neutral-700 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.2, duration: 0.6, ease: "easeInOut" }}
+            >
+              <div className="flex justify-center mb-4">
+                <Image
+                  src={service.icon}
+                  alt={service.name}
+                  width={64}
+                  height={64}
+                  className="object-contain "
+                />
               </div>
-            ))
-          }
-      
-
-      
-        
+              <h3 className="text-xl font-semibold mb-2">{service.name}</h3>
+              <p className="text-sm text-muted-foreground">{service.description}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
