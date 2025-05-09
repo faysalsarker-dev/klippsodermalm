@@ -13,6 +13,7 @@ import Services from "@/components/Home/Services";
 import Cta from "@/components/Home/Cta";
 import ContactLocation from "@/components/common/ContactLocation";
 import SpecialOffer from "@/components/common/SpecialOffer";
+import Faq from "@/components/common/Faq";
 
 export default function Home() {
   return (
@@ -68,7 +69,9 @@ export default function Home() {
         <section>
           <BlogList />
         </section>
-
+<section>
+  <Faq/>
+</section>
         <section>
           <ContactLocation />
         </section>

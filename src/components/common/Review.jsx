@@ -7,7 +7,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { Autoplay, Pagination } from "swiper/modules";
-import { Parallax } from "react-parallax";
 const testimonials = [
   {
     id: 1,
@@ -35,17 +34,14 @@ const testimonials = [
   },
 ];
 
-const image1 =
-  "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
+
 const Review = () => {
   return (
       
-    <Parallax
-    bgImage={image1} strength={500}
-  >
 
 
-      <div className="max-w-6xl mx-auto">
+
+      <div className="max-w-6xl mx-auto my-20">
         <h2 className="text-4xl font-bold text-center text-white mb-12 uppercase tracking-wide">
           Vad våra kunder säger
         </h2>
@@ -53,8 +49,8 @@ const Review = () => {
         <Swiper
           slidesPerView={1}
           breakpoints={{
-            768: { slidesPerView: 2, spaceBetween: 20 },
-            1024: { slidesPerView: 3, spaceBetween: 30 },
+            768: { slidesPerView: 1, spaceBetween: 20 },
+            1024: { slidesPerView: 2, spaceBetween: 30 },
           }}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           pagination={{ clickable: true }}
@@ -78,7 +74,7 @@ const Review = () => {
           ))}
         </Swiper>
       </div>
-      </Parallax>
+     
      
   );
 };

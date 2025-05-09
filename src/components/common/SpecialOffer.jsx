@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const SpecialOffer = () => {
     return (
-      <section className="relative px-6 my-4 sm:px-10 md:px-16 py-16  text-white text-center">
+      <section className="relative px-6 my-20 sm:px-10 md:px-16 py-16  text-white text-center">
            <Image
                 src='/offer.jpg'
                 alt="Hero Background"

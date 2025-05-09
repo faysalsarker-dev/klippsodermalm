@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const AboutUs = () => {
   return (
-    <section className="py-16 bg-background-primary h-screen flex items-center">
+    <section className="py-16 bg-background-primary min-h-screen flex items-center">
       <div className="max-w-6xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-10">
         {/* Text Section */}
         <motion.div
@@ -16,7 +16,7 @@ const AboutUs = () => {
           className="md:w-1/2 text-center md:text-left"
         >
           <h2 className="text-4xl font-bold text-primary mb-6">
-            Klipp Södermalm – Din Professionella Salong
+            Klipp Södermalm 
           </h2>
 
           <p className="text-lg text-muted mb-4">
