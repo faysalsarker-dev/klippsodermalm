@@ -13,8 +13,8 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Book', path: '/book' },
+    { name: 'Blogs', path: '/blog' },
   ];
 
   const linkClass = (path) =>
@@ -60,7 +60,7 @@ const Navbar = () => {
 
         {/* Right: CTA */}
         <div className="hidden lg:flex">
-          <Link href="/contact">
+          <Link href="/contact-us">
             <button className="px-4 py-1 bg-primary text-white rounded-full shadow hover:opacity-90 transition">
               Contact
             </button>
@@ -152,7 +152,7 @@ const Navbar = () => {
               ))}
 
               {/* CTA on mobile */}
-              <Link href="/contact">
+              <Link href="/contact-us">
                 <button
                   onClick={() => setIsOpen(false)}
                   className="w-full mt-4 px-4 py-2 bg-primary text-white rounded-full shadow hover:opacity-90 transition"

@@ -26,7 +26,11 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar/>
-        <QueryProvider>{children}</QueryProvider>
+        <QueryProvider>
+          
+               {children}
+
+          </QueryProvider>
         <Footer/>
       </body>
     </html>

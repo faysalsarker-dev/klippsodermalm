@@ -8,7 +8,7 @@ const SpecialOffer = () => {
                 alt="Hero Background"
                 fill
                 priority
-                className="object-cover z-0"
+                className="cover z-0"
               />
               <div className="absolute inset-0 hero-overlay  z-10" />
  <div className="relative z-20">

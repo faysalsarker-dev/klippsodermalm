@@ -11,7 +11,7 @@ const Cta = () => {
           alt="CTA background graphic"
           layout="fill"
           objectFit="cover"
-        //   placeholder="blur"
+          
           priority
         />
       </div>
