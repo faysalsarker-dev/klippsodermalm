@@ -1,83 +1,93 @@
-// app/services/page.tsx
 import Link from "next/link";
-import  Image  from 'next/image';
-// app/data/services.ts
-export const services = [
+import Image from "next/image";
+
+
+
+export const metadata = {
+  title: "Needle Piercing Services | Safe & Stylish",
+  description: "Explore safe and stylish needle piercing services: ear, nose, eyebrow, and belly piercings from professionals.",
+};
+const services = [
   {
-    id: "classic-haircut",
-    name: "Classic Haircut",
-    description: "Scissor and clipper cut with styling",
+    id: "ear-piercing",
+    name: "Ear Piercing",
+    description: "Precision ear lobe and cartilage piercing",
+    price: 30,
+  },
+  {
+    id: "nose-piercing",
+    name: "Nose Piercing",
+    description: "Safe and sterile nostril piercing",
     price: 25,
   },
   {
-    id: "beard-trim",
-    name: "Beard Trim",
-    description: "Shaping and detailing with razor finish",
-    price: 15,
+    id: "belly-piercing",
+    name: "Belly Button Piercing",
+    description: "Trendy navel piercing with aftercare",
+    price: 40,
   },
   {
-    id: "hair-wash",
-    name: "Hair Wash",
-    description: "Refreshing wash with scalp massage",
-    price: 10,
-  },
-  {
-    id: "kids-cut",
-    name: "Kids Haircut",
-    description: "Fun and friendly trim for kids",
-    price: 20,
-  },
-  {
-    id: "full-package",
-    name: "Gentlemen’s Full Package",
-    description: "Haircut + Beard + Wash Combo",
-    price: 60,
+    id: "eyebrow-piercing",
+    name: "Eyebrow Piercing",
+    description: "Stylish brow piercing with precision",
+    price: 35,
   },
 ];
 
-export default function page() {
+export default function ServicesPage() {
   return (
-    <main className="max-w-4xl mx-auto px-4 py-10 min-h-screen">
-      <h1 className="text-4xl font-bold text-center mb-8">Our Services</h1>
-      <div className="grid gap-6">
-        {services.map((service) => (
-          <Link
-            key={service.id}
-            href={`/booking?service=${service.id}`}
-            className="card  shadow-md hover:shadow-xl transition cursor-pointer"
-          >
-            <div className="card-body p-0 flex flex-row justify-between items-center bg-background-secondary rounded-lg">
-              <div className="flex items-center gap-4">
-                        <div className="w-24 h-24 rounded-md  overflow-hidden relative p-0">
-                <Image
-                  src='/hero.jpg'
-                  alt={service.name}
-                  fill
-                  className="object-contain "
-                />
-              </div>
+    <>
+    
 
+     
+      <div className=" min-h-screen w-full bg-background-secondary">
+   
 
-          <div>
-                  <h2 className="card-title text-xl text-primary">
+        <main className="max-w-2xl mx-auto px-4 py-16">
+          <h1 className="text-4xl font-bold text-center text-white mb-10 drop-shadow-lg">
+            Needle Piercing Services
+          </h1>
+
+          <div className="space-y-6">
+            {services.map((service) => (
+              <Link
+                key={service.id}
+                href={`/booking?service=${service.id}`}
+                className="flex items-center gap-4 p-4 relative rounded-xl shadow hover:shadow-lg transition backdrop-blur-sm"
+              >
+                    <Image
+                        src='/servicesbg.png'
+                        alt="Hero Background"
+                        fill
+                        priority
+                        className="object-cover z-0"
+                      />
+                <div className="relative w-20 h-20 rounded-md overflow-hidden flex-shrink-0">
+                  <Image
+                    src="/hero.jpg"
+                    alt={service.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
+                {/* Service Info */}
+                <div className="flex-1">
+                  <h2 className="text-lg font-semibold text-primary">
                     {service.name}
                   </h2>
-                  <p className="text-sm text-gray-500">{service.description}</p>
+                  <p className="text-sm ">{service.description}</p>
+                </div>
+
+                {/* Price */}
+                <div className="text-base font-bold text-primary">
+                  ${service.price}
+                </div>
+              </Link>
+            ))}
           </div>
-              </div>
-
-
-
-
-
-
-              <div className="text-lg font-semibold text-accent">
-                ${service.price}
-              </div>
-            </div>
-          </Link>
-        ))}
+        </main>
       </div>
-    </main>
+    </>
   );
 }

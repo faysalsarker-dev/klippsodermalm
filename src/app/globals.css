@@ -26,6 +26,17 @@
 
 
 
+/* Style the week row */
+.rdp-head {
+  background-color: #e0f2fe; /* light blue background */
+  color: #0369a1;            /* blue text */
+  font-weight: 600;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+
+
 
 
 /* styles/globals.css */
