@@ -14,7 +14,7 @@ export default function Services() {
       name: "Gun Piercing",
       description: "Quick and stylish piercings using sterilized piercing guns for a safe and trendy experience.",
       icon: "/gun.png",
-            path:'/needle-piercing'
+            path:'/gun-piercing'
 
     },
     {

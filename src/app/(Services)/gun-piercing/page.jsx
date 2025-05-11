@@ -7,6 +7,9 @@ export const metadata = {
   title: "Needle Piercing Services | Safe & Stylish",
   description: "Explore safe and stylish needle piercing services: ear, nose, eyebrow, and belly piercings from professionals.",
 };
+
+
+
 const services = [
   {
     id: "ear-piercing",
@@ -45,7 +48,7 @@ export default function ServicesPage() {
 
         <main className="max-w-2xl mx-auto px-4 py-16">
           <h1 className="text-4xl font-bold text-center text-white mb-10 drop-shadow-lg">
-            Needle Piercing Services
+            Gun Piercing Services
           </h1>
 
           <div className="space-y-6">
@@ -59,7 +62,7 @@ export default function ServicesPage() {
                         src='/servicesbg.png'
                         alt="Hero Background"
                         fill
-                        priority
+                        priority={true}
                         className="object-cover z-0 rounded-lg"
                       />
                         <div className="rounded-lg absolute z-10 inset-0 bg-gradient-to-r  from-[#282828] via-[#28282880] to-transparent " />
