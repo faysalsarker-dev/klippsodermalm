@@ -3,7 +3,7 @@ import Link from "next/link";
 
 
 
-export default function BlogCard() {
+export default function BlogCard({className}) {
     const blog ={
         title: "Sample Blog Title",
         date: "January 1, 2023",
@@ -13,7 +13,7 @@ export default function BlogCard() {
     }
     
   return (
-    <div className="card bg-background-secondary shadow-xl hover:shadow-2xl transition duration-300 p-2">
+    <div className={`card shadow-xl hover:shadow-2xl transition duration-300 p-2 ${className}`}>
       <figure className="relative w-full h-48">
         <Image
           src={blog.image}

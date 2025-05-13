@@ -19,7 +19,7 @@ const Slots = ({slotdetails, isLoading, isError, refetch, date}) => {
 
 
 
-
+console.log(slotdetails,'slotdetails');
 
 
   const { mutateAsync, isPending } = useMutation({
@@ -130,11 +130,11 @@ const Slots = ({slotdetails, isLoading, isError, refetch, date}) => {
         whileTap={{ scale: 0.97 }}
         key={slot}
         onClick={() => setSelectedSlot(slot)}
-      className={`py-2 px-4 rounded-lg font-medium transition-all duration-200 border
+      className={`py-2 px-4 rounded-lg font-bold transition-all duration-200 border
             ${
               selectedSlot === slot
                 ? "bg-primary text-white border-primary"
-                : "bg-background text-primary border-secondary hover:bg-primary hover:text-white hover:border-primary"
+                : "bg-gray-500 text-white border-background-secondary hover:bg-primary hover:text-white hover:border-primary"
             }`}
       >
         {slot}
@@ -173,9 +173,16 @@ const Slots = ({slotdetails, isLoading, isError, refetch, date}) => {
         />
         <button
           type="submit"
+          disabled={isPending}
           className="bg-primary hover:bg-primary/90 text-white py-3 rounded-lg font-medium transition-all"
         >
-          Confirm Booking
+        {
+          isPending ? (
+     <span className="loading loading-bars loading-sm"></span>
+
+          
+          ) : 'Confirm Booking'}
+       
         </button>
       </form>
     </motion.div>
