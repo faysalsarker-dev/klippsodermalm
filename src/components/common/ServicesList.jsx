@@ -30,7 +30,7 @@ const services = [
 
 const ServicesList = ({url}) => {
 
-    console.log("URL", url);
+    
     return (
         <div>
                   <div className="space-y-6">

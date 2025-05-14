@@ -1,98 +1,75 @@
-import Link from "next/link";
-import Image from "next/image";
-
-
+import ServicesList from "@/components/common/ServicesList";
 
 export const metadata = {
-  title: "Needle Piercing Services | Safe & Stylish",
-  description: "Explore safe and stylish needle piercing services: ear, nose, eyebrow, and belly piercings from professionals.",
+  title: "Needle Piercing Services | Safe, Professional & Stylish",
+  description:
+    "Explore premium needle piercing services including ear, nose, and belly piercings by certified professionals. 100% hygienic & 4.8★ rated on Google.",
 };
 
-
-
-const services = [
-  {
-    id: "ear-piercing",
-    name: "Ear Piercing",
-    description: "Precision ear lobe and cartilage piercing",
-    price: 30,
-  },
-  {
-    id: "nose-piercing",
-    name: "Nose Piercing",
-    description: "Safe and sterile nostril piercing",
-    price: 25,
-  },
-  {
-    id: "belly-piercing",
-    name: "Belly Button Piercing",
-    description: "Trendy navel piercing with aftercare",
-    price: 40,
-  },
-  {
-    id: "eyebrow-piercing",
-    name: "Eyebrow Piercing",
-    description: "Stylish brow piercing with precision",
-    price: 35,
-  },
-];
-
-export default function ServicesPage() {
+export default function page() {
   return (
-    <>
-    
-
-     
-      <div className=" min-h-screen w-full bg-background-secondary">
-   
-
-        <main className="max-w-2xl mx-auto px-4 py-16">
-          <h1 className="text-4xl font-bold text-center text-white mb-10 drop-shadow-lg">
-            Gun Piercing Services
-          </h1>
-
-          <div className="space-y-6">
-            {services.map((service) => (
-              <Link
-                key={service.id}
-                href={`/booking?service=${service.id}`}
-                className=" flex items-center gap-4 p-4 relative rounded-lg shadow hover:shadow-lg transition backdrop-blur-sm"
-              >
-                    <Image
-                        src='/servicesbg.png'
-                        alt="Hero Background"
-                        fill
-                        priority={true}
-                        className="object-cover z-0 rounded-lg"
-                      />
-                        <div className="rounded-lg absolute z-10 inset-0 bg-gradient-to-r  from-[#282828] via-[#28282880] to-transparent " />
-
-                <div className="relative z-50 w-20 h-20 rounded-md overflow-hidden flex-shrink-0">
-                  <Image
-                    src="/hero.jpg"
-                    alt={service.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-
-                {/* Service Info */}
-                <div className="flex-1 z-50">
-                  <h2 className="text-lg font-semibold text-primary">
-                    {service.name}
-                  </h2>
-                  <p className="text-sm ">{service.description}</p>
-                </div>
-
-                {/* Price */}
-                <div className="text-base font-bold text-primary z-50">
-                  ${service.price}
-                </div>
-              </Link>
-            ))}
+    <div className="min-h-screen  text-white bg-background-secondary">
+      {/* Hero Section */}
+      <div
+        className="hero h-[300px] bg-cover bg-center"
+        style={{ backgroundImage: "url('/needlepiercing.jpg')" }}
+      >
+        <div className="hero-overlay"></div>
+        <div className="hero-content text-center text-neutral-content">
+          <div className="max-w-xl">
+            <h1 className="text-4xl font-bold drop-shadow mb-3">Needle Piercing Services</h1>
+            <p className="text-lg">
+              Safe, hygienic, and stylish needle piercings by certified professionals. Trusted by hundreds with a 4.8★ rating on Google.
+            </p>
           </div>
-        </main>
+        </div>
       </div>
-    </>
+
+      {/* Main Content */}
+      <main className="max-w-5xl mx-auto px-4 py-12 space-y-16">
+        {/* Google Rating */}
+        <section className="text-center">
+          <p className="text-lg font-medium">
+            ⭐ <span className="text-primary font-bold">4.8/5</span> Google Rating — Based on real customer reviews
+          </p>
+        </section>
+
+        {/* Services List */}
+        <section>
+          <h2 className="text-2xl font-semibold mb-6 text-center">Our Needle Piercing Services</h2>
+          <ServicesList url="/needle-piercing" />
+        </section>
+
+        {/* Aftercare Tips */}
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Piercing Aftercare Tips</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Clean the area twice daily using a saline solution.</li>
+            <li>Avoid touching or rotating the jewelry without washing hands.</li>
+            <li>Keep the area dry and avoid swimming for at least 7 days.</li>
+            <li>Avoid makeup, creams, or perfumes near the piercing site.</li>
+          </ul>
+        </section>
+
+        {/* Why Choose Us */}
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">Why Choose Us?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="card bg-background shadow-md p-5">
+              <h3 className="font-bold text-lg mb-2">Certified Professionals</h3>
+              <p>All our piercers are certified, trained, and experienced in needle techniques.</p>
+            </div>
+            <div className="card bg-background shadow-md p-5">
+              <h3 className="font-bold text-lg mb-2">Sterile & Safe</h3>
+              <p>We use only sterilized tools and single-use needles for complete hygiene.</p>
+            </div>
+            <div className="card bg-background shadow-md p-5">
+              <h3 className="font-bold text-lg mb-2">Style Options</h3>
+              <p>Choose from a range of jewelry and piercing placements to match your style.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
   );
 }

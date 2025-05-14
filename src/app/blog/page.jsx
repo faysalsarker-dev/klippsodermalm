@@ -1,30 +1,5 @@
 import AllBlogs from '@/components/common/AllBlogs';
-import BlogCard from '@/components/common/BlogCard';
-import Head from 'next/head';
 
-const blogs = [
-  {
-    title: "Best Haircuts for Men This Year",
-    description: "Stay ahead of the trends with these amazing haircuts.",
-    date: "March 25, 2025",
-    imageUrl: "/images/blog1.jpg",
-    link: "/blog/1",
-  },
-  {
-    title: "How to Maintain Your Beard Like a Pro",
-    description: "A comprehensive guide to keeping your beard healthy and stylish.",
-    date: "April 10, 2025",
-    imageUrl: "/images/blog2.jpg",
-    link: "/blog/2",
-  },
-  {
-    title: "The History of the Barber Shop",
-    description: "Learn the history behind the modern barbering experience.",
-    date: "May 5, 2025",
-    imageUrl: "/images/blog3.jpg",
-    link: "/blog/3",
-  },
-];
 
 export default function page() {
   return (

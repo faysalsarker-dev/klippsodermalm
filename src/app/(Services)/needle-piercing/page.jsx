@@ -12,9 +12,9 @@ export default function page() {
       {/* Hero Section */}
       <div
         className="hero h-[300px] bg-cover bg-center"
-        style={{ backgroundImage: "url('/hero.jpg')" }}
+        style={{ backgroundImage: "url('/needlepiercing.jpg')" }}
       >
-        <div className="hero-overlay bg-black bg-opacity-60"></div>
+        <div className="hero-overlay"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-xl">
             <h1 className="text-4xl font-bold drop-shadow mb-3">Needle Piercing Services</h1>
