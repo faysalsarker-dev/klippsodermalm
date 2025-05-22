@@ -17,6 +17,7 @@ const BookingPage = () => {
   const [date, setDate] = useState(format(new Date(), "yyyy-MM-dd"));
 const today = new Date();
   today.setHours(0, 0, 0, 0);
+ 
 
   const { data: slotdetails, isLoading, isError, refetch } = useQuery({
     queryKey: ["slotsdetails", date],

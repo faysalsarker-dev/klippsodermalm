@@ -5,7 +5,7 @@ const ServicesCard = ({service}) => {
     return (
        <Link
                 
-                href={`/booking?service=${service?.id}`}
+                href={`/booking?id=${service?._id}`}
                 className=" flex items-center gap-4 p-4 relative rounded-lg shadow hover:shadow-lg transition backdrop-blur-sm"
               >
                     <Image
@@ -29,15 +29,17 @@ const ServicesCard = ({service}) => {
                 {/* Service Info */}
                 <div className="flex-1 z-50">
                   <h2 className="text-lg font-semibold text-primary">
-                    {service?.name}
+                    {service?.title}
                   </h2>
                   <p className="text-sm ">{service?.description}</p>
                 </div>
 
                 {/* Price */}
-                <div className="text-base font-bold text-primary z-50">
-                  ${service?.price}
-                </div>
+<div className="flex flex-col items-start text-primary z-50">
+  <span className="text-sm text-gray-500 line-through">${service?.regularPrice}</span>
+  <span className="text-base font-bold text-primary">${service?.discountedPrice}</span>
+</div>
+
               </Link>
     );
 };

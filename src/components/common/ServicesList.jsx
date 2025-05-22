@@ -1,4 +1,9 @@
+
+"use client";
+
+import axiosInstance from "@/app/lib/axios";
 import ServicesCard from "./ServicesCard";
+import { useQuery } from "@tanstack/react-query";
 
 const services = [
   {
@@ -28,14 +33,25 @@ const services = [
 ];
 
 
-const ServicesList = ({url}) => {
+const ServicesList = ({category}) => {
 
+  const { data=[], isLoading, refetch } = useQuery({
+    queryKey: ["services",category],
+    queryFn: async () => {
+      const res = await axiosInstance.get(`/price/klippsodermalm/${category}`);
+      return res.data;
+    },
+  });
     
+
+console.log(data,category,'dataa');
+
+
     return (
         <div>
                   <div className="space-y-6">
-            {services.map((service) => (
-            <ServicesCard key={service.id} service={service}/>
+            {data.map((service) => (
+            <ServicesCard key={service._id} service={service}/>
             ))}
           </div>
         </div>

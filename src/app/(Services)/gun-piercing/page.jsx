@@ -17,7 +17,7 @@ export default function page() {
         <div className="hero-overlay"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-xl">
-            <h1 className="text-4xl font-bold drop-shadow mb-3">Needle Piercing Services</h1>
+            <h1 className="text-4xl font-bold drop-shadow mb-3">Gun Piercing Services</h1>
             <p className="text-lg">
               Safe, hygienic, and stylish needle piercings by certified professionals. Trusted by hundreds with a 4.8★ rating on Google.
             </p>
@@ -37,7 +37,7 @@ export default function page() {
         {/* Services List */}
         <section>
           <h2 className="text-2xl font-semibold mb-6 text-center">Our Needle Piercing Services</h2>
-          <ServicesList url="/needle-piercing" />
+          <ServicesList category={`piercing with gun`} />
         </section>
 
         {/* Aftercare Tips */}

@@ -6,9 +6,10 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { useForm } from "react-hook-form";
 import { format } from "date-fns";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import axiosInstance from "@/app/lib/axios";
 import toast from "react-hot-toast";
+import { useSearchParams } from "next/navigation";
 
 
 const Slots = ({slotdetails, isLoading, isError, refetch, date}) => {
@@ -16,10 +17,21 @@ const Slots = ({slotdetails, isLoading, isError, refetch, date}) => {
 
   const { register, handleSubmit, reset } = useForm();
 
+  const searchParams = useSearchParams(); 
+  const id = searchParams.get('id');
 
+  const { data:serviesInfo } = useQuery({
+    queryKey: ["services", id],
+    queryFn: async ({ signal }) => {
+      const { data } = await axiosInstance.get(
+        `/price/${id}`,
+        { signal }
+      );
+      return {service:data?.title , price:data?.discountedPrice};
+    },
+    enabled: !!id,
+  });
 
-
-console.log(slotdetails,'slotdetails');
 
 
   const { mutateAsync, isPending } = useMutation({
@@ -70,11 +82,9 @@ console.log(slotdetails,'slotdetails');
       bookingDate: date,
         slot: selectedSlot,
         ...data,
-        price:240,
-        service: "Haircut",
+       ...serviesInfo
     };
     mutateAsync(bookingData);
-    console.log("Booking data:", bookingData);
   };
 
 
