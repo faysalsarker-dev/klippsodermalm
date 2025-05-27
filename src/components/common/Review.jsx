@@ -7,35 +7,27 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { Autoplay, Pagination } from "swiper/modules";
-const testimonials = [
-  {
-    id: 1,
-    name: "Liam Andersson",
-    review: "Absolutely loved the piercing experience! Super clean and professional. Will definitely come back!",
-    rating: 5,
-  },
-  {
-    id: 2,
-    name: "Nora Lund",
-    review: "The barber gave me the freshest fade ever. The vibe, the music, the whole place is 🔥",
-    rating: 4.5,
-  },
-  {
-    id: 3,
-    name: "Elias Berg",
-    review: "Great customer service, top-notch hygiene, and the staff are super chill. 10/10 recommend.",
-    rating: 4,
-  },
-  {
-    id: 4,
-    name: "Saga Blom",
-    review: "Got my nose pierced here — painless and perfect placement. Love the result!",
-    rating: 5,
-  },
-];
+import axiosInstance from "@/app/lib/axios";
+import { useQuery } from "@tanstack/react-query";
+
 
 
 const Review = () => {
+
+
+  const { data:testimonials } = useQuery({
+    queryKey: ["testimonials"],
+    queryFn: async () => {
+      const { data } = await axiosInstance.get(
+        `/review`
+        
+      );
+      return data;
+    },
+   
+  });
+
+
   return (
       
 
@@ -58,8 +50,8 @@ const Review = () => {
           modules={[Autoplay, Pagination]}
           className="w-full"
         >
-          {testimonials.map((testimonial) => (
-            <SwiperSlide key={testimonial.id}>
+          {testimonials?.map((testimonial) => (
+            <SwiperSlide key={testimonial._id}>
               <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-6 text-white shadow-lg mx-3 h-full flex flex-col justify-between transition-all hover:scale-105 duration-300">
                 <FaQuoteLeft className="text-3xl text-primary mb-4" />
                 <p className="italic mb-6">"{testimonial.review}"</p>

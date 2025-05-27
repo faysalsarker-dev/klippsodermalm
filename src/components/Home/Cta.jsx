@@ -5,9 +5,9 @@ const Cta = () => {
   return (
     <section className="relative py-20 px-6 lg:px-16 overflow-hidden  my-6">
       {/* Background Graphic */}
-      <div className="absolute inset-0 z-0 opacity-30">
+      <div className="absolute inset-0 z-0 opacity-50">
         <Image
-          src='/hero.jpg'
+          src='/ctaa.jpg'
           alt="CTA background graphic"
           layout="fill"
           objectFit="cover"

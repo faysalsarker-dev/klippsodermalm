@@ -1,91 +1,75 @@
-
+// app/blog/[slug]/page.jsx or .tsx
 import { notFound } from "next/navigation";
 import { getBlogDetails } from "@/utility/getBlogDetails";
-import { loadGetInitialProps } from "next/dist/shared/lib/utils";
-import BlogContent from "@/components/common/BlogContent";
+import axiosInstance from "@/app/lib/axios";
+import Image from "next/image";
 
+import "@/app/globals.css"; // Ensure Tailwind CSS is applied
 
-
+export async function generateStaticParams() {
+  try {
+    const res = await axiosInstance.get("/blogs");
+    return res.data.map((blog) => ({ slug: blog.slug }));
+  } catch (error) {
+    return [];
+  }
+}
 
 export async function generateMetadata({ params }) {
-    const post = await getBlogDetails(params.slug);
-    if (!post) return {};
+  try {
+    const res = await axiosInstance.get(`/blogs/${params.slug}`);
+    const blog = res.data;
 
     return {
-        title: post.title,
-        description: post.description,
-        openGraph: {
-            title: post.title,
-            description: post.description,
-            images: [
-                {
-                    url: post.image,
-                    alt: post.title,
-                },
-            ],
-            type: "article",
-            publishedTime: post.date,
-            authors: [post.author],
-            tags: post.tags,
-        },
-        twitter: {
-            card: "summary_large_image",
-            title: post.title,
-            description: post.description,
-            images: [post.image],
-        },
+      title: blog.seo?.title || blog.title,
+      description: blog.seo?.description || "",
+      keywords: Array.isArray(blog.seo?.keywords)
+        ? blog.seo.keywords.flatMap((kw) => JSON.parse(kw))
+        : [],
+      openGraph: {
+        type: blog.seo?.ogType || "article",
+      },
+      robots: blog.seo?.robots || "index, follow",
     };
+  } catch (error) {
+    return { title: "Blog Not Found" };
+  }
 }
 
 export default async function BlogPage({ params }) {
-    const post = await getBlogDetails(params.slug);
+  const post = await getBlogDetails(params.slug);
 
-    if (!post) {
-        notFound();
-    }
+  if (!post) return notFound();
 
-    console.log(post);
-
-    return (
-       
-        <>
-            <article>
-                <h1>{post.title}</h1>
-                <p>
-                    <small>
-                        By {post.author} on {new Date(post.date).toLocaleDateString()}
-                    </small>
-                </p>
-                {post.image && (
-                    <img
-                        src={post.image}
-                        alt={post.title}
-                        style={{ maxWidth: "100%", height: "auto" }}
-                    />
-                )}
-                <div
-                    dangerouslySetInnerHTML={{ __html: post.content }}
-                    style={{ marginTop: "1em" }}
-                />
-                <div>
-                    {post.tags &&
-                        post.tags.map((tag) => (
-                            <span
-                                key={tag}
-                                style={{
-                                    display: "inline-block",
-                                    marginRight: "8px",
-                                    padding: "2px 8px",
-                                    background: "#eee",
-                                    borderRadius: "4px",
-                                    fontSize: "0.9em",
-                                }}
-                            >
-                                #{tag}
-                            </span>
-                        ))}
-                </div>
-                <BlogContent content={post?.content} />
-            </article>
-        </>)
+  return (
+  <div className="bg-background-secondary">
+        <section className="max-w-4xl mx-auto px-4 py-10  text-white">
+          {/* Blog Header */}
+          <div className="mb-8">
+            <h1 className="text-4xl font-bold  mb-2">{post.title}</h1>
+            <p className=" text-sm">{new Date(post.createdAt).toLocaleDateString()}</p>
+          </div>
+    
+          {/* Blog Image */}
+          {post.image && (
+            <div className="relative w-full h-[400px] rounded-xl overflow-hidden mb-6">
+              <img
+                src={`${process.env.NEXT_PUBLIC_IMAGE_UR}${post.image}`} 
+                alt={post.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+          )}
+    
+       <article
+      className="prose prose-lg max-w-none text-white blog-content"
+      dangerouslySetInnerHTML={{ __html: post.content }}
+    />
+    
+    
+        
+        </section>
+  </div>
+  );
 }

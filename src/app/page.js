@@ -5,7 +5,6 @@ import dynamic from "next/dynamic";
 // Lazy load non-critical components
 const Gallery = dynamic(() => import("@/components/Home/Gallery"), { ssr: false });
 const BlogList = dynamic(() => import("@/components/Home/BlogList"), { ssr: false });
-const Review = dynamic(() => import("@/components/common/Review"), { ssr: false });
 
 import Hero from "@/components/Home/Hero";
 import AboutUs from "@/components/Home/Aboutus";
@@ -14,6 +13,7 @@ import Cta from "@/components/Home/Cta";
 import ContactLocation from "@/components/common/ContactLocation";
 import SpecialOffer from "@/components/common/SpecialOffer";
 import Faq from "@/components/common/Faq";
+import ReviewList from "@/components/common/ReviewList";
 
 export default function Home() {
   return (
@@ -56,10 +56,10 @@ export default function Home() {
           <Gallery />
         </section>
 
-<section><SpecialOffer /></section>
+{/* <section><SpecialOffer /></section> */}
 
         <section>
-          <Review />
+          <ReviewList />
         </section>
 
         <section>

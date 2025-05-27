@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const AboutUs = () => {
   return (
-    <section className="py-16 bg-background-primary min-h-screen flex items-center">
+    <section className="py-16 bg-background-primary min-h-screen flex items-center overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-10">
         {/* Text Section */}
         <motion.div

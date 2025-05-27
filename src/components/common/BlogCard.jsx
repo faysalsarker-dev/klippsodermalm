@@ -1,34 +1,40 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import striptags from "striptags";
 
 
 
-export default function BlogCard({className}) {
-    const blog ={
-        title: "Sample Blog Title",
-        date: "January 1, 2023",
-        summary: "This is a sample summary of the blog post.",
-        image: "/hero.jpg",
-        slug: "sample-blog-title",
-    }
-    
+export default function BlogCard({className,blog}) {
+const rawContent = Array.isArray(blog?.content) ? blog.content.join(" ") : "";
+const plainText = striptags(rawContent);
+const preview = plainText.length > 150 ? plainText.slice(0, 150) + "..." : plainText;
+
+const formattedDate = new Date(blog?.createdAt).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric"
+});
+
+    console.log(blog, 'blog image');
   return (
     <div className={`card shadow-xl hover:shadow-2xl transition duration-300 p-2 ${className}`}>
       <figure className="relative w-full h-48">
-        <Image
-          src={blog.image}
-          alt={blog.title}
+        <img
+          src={`${process.env.NEXT_PUBLIC_API_URL}${blog?.image}`}
+          alt={blog?.title}
           fill
           className="object-cover rounded-xl"
           sizes="(max-width: 768px) 100vw, 33vw"
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title text-primary">{blog.title}</h2>
-        <p className="text-sm text-gray-500">{blog.date}</p>
-        <p className="line-clamp-3">{blog.summary}</p>
+        <h2 className="card-title text-primary">{blog?.title}</h2>
+        <p className="text-sm text-gray-500">{formattedDate}</p>
+        <p className="line-clamp-3">{preview}</p>
+  
         <div className="card-actions justify-end">
-          <Link href={`/blog/${blog.slug}`} className="btn btn-sm btn-primary">
+          <Link href={`/blog/${blog?.slug}`} className="btn btn-sm btn-primary">
             Read More
           </Link>
         </div>

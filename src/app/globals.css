@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
+@plugin "@tailwindcss/typography";
 :root {
   --background: #1F1F1F;
   --background-secondary: #0F0F0F;
@@ -26,38 +27,11 @@
 
 
 
-/* Style the week row */
-.rdp-head {
-  background-color: #e0f2fe; /* light blue background */
-  color: #0369a1;            /* blue text */
-  font-weight: 600;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-}
 
 
 
 
 
-/* styles/globals.css */
-
-/* Clip Path for Image */
-.clip-path-container {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px; 
-}
-
-.clip-path-image {
-  clip-path: path('M0,10,50 L 90 ,50 L 100 ,10 40 Z');
-  transition: all 0.3s ease-in-out;
-}
-
-/* Optional: Hover effect for image */
-.clip-path-image:hover {
-  transform: scale(1.05);
-  filter: brightness(0.9);
-}
 
 
 
@@ -94,4 +68,174 @@ body {
   background: var(--background);
   color: white;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/* Basic typography & layout */
+.blog-content {
+  color: white;
+  background-color: var(--background);
+  padding: 1.5rem;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  color: var(--primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.blog-content p {
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.blog-content a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* List styles */
+.blog-content ul,
+.blog-content ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.blog-content ul li {
+  list-style-type: disc;
+  margin-bottom: 0.5rem;
+}
+
+.blog-content ol li {
+  list-style-type: decimal;
+  margin-bottom: 0.5rem;
+}
+
+/* Blockquote */
+.blog-content blockquote {
+  border-left: 4px solid var(--primary);
+  background-color: var(--background-secondary);
+  padding: 1rem;
+  margin: 1.5rem 0;
+  color: #ddd;
+  font-style: italic;
+}
+
+/* Image */
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+/* Inline code */
+.blog-content code {
+  background-color: var(--background-secondary);
+  color: var(--primary);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+/* Pre block */
+.blog-content pre {
+  background-color: var(--background-secondary);
+  color: #eee;
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+/* Table */
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.blog-content th,
+.blog-content td {
+  border: 1px solid #444;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.blog-content th {
+  background-color: var(--foreground);
+  color: var(--primary);
+}
+
+/* ===== React Quill custom classes ===== */
+
+/* Text alignment */
+.blog-content .ql-align-center {
+  text-align: center;
+}
+
+.blog-content .ql-align-right {
+  text-align: right;
+}
+
+.blog-content .ql-align-justify {
+  text-align: justify;
+}
+
+/* Font sizes */
+.blog-content .ql-size-small {
+  font-size: 0.75em;
+}
+.blog-content .ql-size-large {
+  font-size: 1.5em;
+}
+.blog-content .ql-size-huge {
+  font-size: 2.5em;
+}
+
+/* Indentations */
+.blog-content .ql-indent-1 {
+  margin-left: 2em;
+}
+.blog-content .ql-indent-2 {
+  margin-left: 4em;
+}
+.blog-content .ql-indent-3 {
+  margin-left: 6em;
+}
+
+/* Bold/Italic/Underline/Strike (optional if content includes these) */
+.blog-content strong {
+  font-weight: bold;
+}
+.blog-content em {
+  font-style: italic;
+}
+.blog-content u {
+  text-decoration: underline;
+}
+.blog-content s {
+  text-decoration: line-through;
+}
+
+/* Color & background — fallback only, you can map more if needed */
+.blog-content [style*="color:"] {
+  color: inherit !important;
+}
+.blog-content [style*="background-color:"] {
+  background-color: inherit !important;
+}
+
+/* Clean spacing from empty lines */
+.blog-content p:empty {
+  display: none;
 }

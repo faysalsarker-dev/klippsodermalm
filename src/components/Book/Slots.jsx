@@ -22,10 +22,10 @@ const Slots = ({slotdetails, isLoading, isError, refetch, date}) => {
 
   const { data:serviesInfo } = useQuery({
     queryKey: ["services", id],
-    queryFn: async ({ signal }) => {
+    queryFn: async () => {
       const { data } = await axiosInstance.get(
-        `/price/${id}`,
-        { signal }
+        `/price/${id}`
+        
       );
       return {service:data?.title , price:data?.discountedPrice};
     },
@@ -132,7 +132,18 @@ const Slots = ({slotdetails, isLoading, isError, refetch, date}) => {
       {slotdetails.message || "It's an off day. Please choose another date."}
     </p>
   </div>
-) : (
+) :
+
+slotdetails?.slots?.length === 0 ? (
+  <div className="w-full text-center py-10">
+    <p className="text-red-500 font-semibold">
+      No slots available for this date. Please choose another date.
+    </p>
+  </div>
+) :
+
+
+(
   <div className="grid grid-cols-3  gap-4 mb-6">
     {slotdetails?.slots?.map((slot) => (
       <motion.button

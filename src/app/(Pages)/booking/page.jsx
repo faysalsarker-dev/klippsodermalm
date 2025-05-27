@@ -5,8 +5,8 @@ import { format } from "date-fns";
 import { DayPicker } from "react-day-picker";
 import classNames from "react-day-picker/dist/style.css";
 import { useQuery } from "@tanstack/react-query";
-import axiosInstance from "./../lib/axios";
 import Slots from "@/components/Book/Slots";
+import  axiosInstance  from '@/app/lib/axios';
 
 
 

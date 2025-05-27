@@ -14,6 +14,36 @@ pnpm dev
 bun dev
 ```
 
+export async function generateStaticParams() {
+  try {
+    const res = await axiosInstance.get("/blogs");
+    return res.data.map((blog) => ({ slug: blog.slug }));
+  } catch (error) {
+    return [];
+  }
+}
+
+// Dynamic Metadata for SEO
+export async function generateMetadata({ slug }) {
+  try {
+    const res = await axiosInstance.get(`/blogs/${slug}`);
+    const blog = res.data;
+
+    return {
+      title: blog.seo?.title || blog.title,
+      description: blog.seo?.description || "",
+      keywords: blog.seo?.keywords || [],
+      openGraph: {
+        type: blog.seo?.ogType || "article",
+      },
+      robots: blog.seo?.robots || "index, follow",
+    };
+  } catch (error) {
+    return { title: "Blog Not Found" };
+  }
+}
+
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.

@@ -21,8 +21,7 @@ export default function Services() {
       name: "Microneedling",
       description: "Boost skin health and glow with advanced microneedling sessions tailored for rejuvenation.",
       icon: "/microneedls.png",
-            path:'/needle-piercing'
-
+            path:'/microneedling'
     },
   ];
 
