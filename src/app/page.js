@@ -11,9 +11,9 @@ import AboutUs from "@/components/Home/Aboutus";
 import Services from "@/components/Home/Services";
 import Cta from "@/components/Home/Cta";
 import ContactLocation from "@/components/common/ContactLocation";
-import SpecialOffer from "@/components/common/SpecialOffer";
 import Faq from "@/components/common/Faq";
 import ReviewList from "@/components/common/ReviewList";
+import OfferBanners from "@/components/common/OfferBanners";
 
 export default function Home() {
   return (
@@ -56,7 +56,7 @@ export default function Home() {
           <Gallery />
         </section>
 
-{/* <section><SpecialOffer /></section> */}
+<section><OfferBanners /></section>
 
         <section>
           <ReviewList />

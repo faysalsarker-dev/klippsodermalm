@@ -1,3 +1,4 @@
+import OfferBanners from "@/components/common/OfferBanners";
 import ServicesList from "@/components/common/ServicesList";
 
 export const metadata = {
@@ -33,6 +34,8 @@ export default function page() {
             ⭐ <span className="text-primary font-bold">4.8/5</span> Google Rating — Based on real customer reviews
           </p>
         </section>
+
+<section><OfferBanners /></section>
 
         {/* Services List */}
         <section>

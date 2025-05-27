@@ -4,7 +4,9 @@ import { getBlogDetails } from "@/utility/getBlogDetails";
 import axiosInstance from "@/app/lib/axios";
 import Image from "next/image";
 
-import "@/app/globals.css"; // Ensure Tailwind CSS is applied
+
+
+import "@/app/globals.css"; 
 
 export async function generateStaticParams() {
   try {
@@ -41,32 +43,33 @@ export default async function BlogPage({ params }) {
 
   if (!post) return notFound();
 
+const formattedDate = new Date(post?.createdAt).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric"
+});
+
+
   return (
   <div className="bg-background-secondary">
         <section className="max-w-4xl mx-auto px-4 py-10  text-white">
           {/* Blog Header */}
-          <div className="mb-8">
-            <h1 className="text-4xl font-bold  mb-2">{post.title}</h1>
-            <p className=" text-sm">{new Date(post.createdAt).toLocaleDateString()}</p>
-          </div>
-    
-          {/* Blog Image */}
-          {post.image && (
-            <div className="relative w-full h-[400px] rounded-xl overflow-hidden mb-6">
-              <img
-                src={`${process.env.NEXT_PUBLIC_IMAGE_UR}${post.image}`} 
-                alt={post.title}
-                fill
-                className="object-cover"
-              />
-            </div>
-          )}
-    
-       <article
-      className="prose prose-lg max-w-none text-white blog-content"
-      dangerouslySetInnerHTML={{ __html: post.content }}
-    />
-    
+           <main className="max-w-3xl mx-auto px-4 py-10">
+      <h1 className="text-4xl font-bold  mb-6">{post.title}</h1>
+
+      {post.image && (
+        <img
+          src={post.image}
+          alt={post.title}
+          className="w-full h-auto rounded-xl shadow-md mb-10"
+        />
+      )}
+
+      <article
+        className="prose prose-lg prose-gray max-w-none blog-content"
+        dangerouslySetInnerHTML={{ __html: post.content }}
+      />
+    </main>
     
         
         </section>

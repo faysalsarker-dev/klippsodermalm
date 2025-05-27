@@ -1,3 +1,5 @@
+
+"use client";
 import AllBlogs from '@/components/common/AllBlogs';
 
 
@@ -16,13 +18,7 @@ export default function page() {
       <AllBlogs/>
         </section>
 
-        <section className="bg-indigo-600 text-white py-10 mt-20">
-          <div className="max-w-6xl mx-auto px-4 text-center">
-            <h2 className="text-3xl font-semibold">Visit Our Barber Shop</h2>
-            <p className="mt-4 text-lg">Experience the best haircuts, beard trims, and grooming services in town. Book your appointment today!</p>
-            <a href="/contact" className="mt-6 inline-block bg-white text-indigo-600 px-6 py-3 rounded-lg text-lg">Book an Appointment</a>
-          </div>
-        </section>
+   
       </div>
     </>
   );

@@ -75,10 +75,7 @@ body {
 /* Basic typography & layout */
 .blog-content {
   color: white;
-  background-color: var(--background);
-  padding: 1.5rem;
   line-height: 1.8;
-  font-size: 1.05rem;
 }
 
 .blog-content h1,
@@ -238,4 +235,47 @@ body {
 /* Clean spacing from empty lines */
 .blog-content p:empty {
   display: none;
+}
+.blog-content a:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+.blog-content p > ul,
+.blog-content p > ol {
+  margin: 1rem 0;
+}
+.blog-content {
+  word-break: break-word;
+}
+
+
+@media (max-width: 768px) {
+  .blog-content {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .blog-content h1 {
+    font-size: 1.8rem;
+  }
+  .blog-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .blog-content pre,
+  .blog-content blockquote {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .blog-content table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .blog-content img {
+    max-width: 100%;
+    height: auto;
+  }
 }

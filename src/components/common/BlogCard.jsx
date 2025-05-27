@@ -8,7 +8,7 @@ import striptags from "striptags";
 export default function BlogCard({className,blog}) {
 const rawContent = Array.isArray(blog?.content) ? blog.content.join(" ") : "";
 const plainText = striptags(rawContent);
-const preview = plainText.length > 150 ? plainText.slice(0, 150) + "..." : plainText;
+const preview = plainText.length > 150 ? plainText.slice(0, 10) + "..." : plainText;
 
 const formattedDate = new Date(blog?.createdAt).toLocaleDateString("en-US", {
   year: "numeric",
@@ -16,7 +16,6 @@ const formattedDate = new Date(blog?.createdAt).toLocaleDateString("en-US", {
   day: "numeric"
 });
 
-    console.log(blog, 'blog image');
   return (
     <div className={`card shadow-xl hover:shadow-2xl transition duration-300 p-2 ${className}`}>
       <figure className="relative w-full h-48">

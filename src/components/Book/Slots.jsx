@@ -10,6 +10,7 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import axiosInstance from "@/app/lib/axios";
 import toast from "react-hot-toast";
 import { useSearchParams } from "next/navigation";
+import ServiceRequiredNotice from "./ServiceRequiredNotice";
 
 
 const Slots = ({slotdetails, isLoading, isError, refetch, date}) => {
@@ -102,12 +103,19 @@ const Slots = ({slotdetails, isLoading, isError, refetch, date}) => {
     return (
       <div className="w-full md:w-1/2 bg-background rounded-2xl shadow-md p-6">
         <h2 className="text-2xl font-semibold mb-4 text-center">
-          Pick a Slot ({format(date, "PPP")})
+   {!id ? null :` Pick a Slot (${format(date, "PPP")}) `}
+
         </h2>
 
        
 
-{isLoading ? (
+{
+!id ? (
+ <ServiceRequiredNotice />
+)
+:
+
+isLoading ? (
   <div className="grid grid-cols-3 gap-3 mb-6">
     {[...Array(6)].map((_, i) => (
       <Skeleton
@@ -142,7 +150,6 @@ slotdetails?.slots?.length === 0 ? (
   </div>
 ) :
 
-
 (
   <div className="grid grid-cols-3  gap-4 mb-6">
     {slotdetails?.slots?.map((slot) => (
@@ -150,6 +157,7 @@ slotdetails?.slots?.length === 0 ? (
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.97 }}
         key={slot}
+        disabled={isPending || !serviesInfo}
         onClick={() => setSelectedSlot(slot)}
       className={`py-2 px-4 rounded-lg font-bold transition-all duration-200 border
             ${
@@ -164,6 +172,9 @@ slotdetails?.slots?.length === 0 ? (
   </div>
 )}
 
+     
+
+ 
 <AnimatePresence mode="wait">
   {selectedSlot && (
     <motion.div
@@ -209,7 +220,6 @@ slotdetails?.slots?.length === 0 ? (
     </motion.div>
   )}
 </AnimatePresence>
-     
       </div>
     );
 };

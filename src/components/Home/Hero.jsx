@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-
+import Link from "next/link";
+import { Link as ScrollLink } from "react-scroll";
 
 const Hero = () => {
   return (
@@ -51,12 +52,20 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.8 }}
           >
-            <button className="btn btn-primary px-8 py-3 text-lg font-semibold rounded-full">
-              Book Now
-            </button>
-            <button className="btn btn-outline text-white border-white hover:bg-white hover:text-black px-8 py-3 text-lg font-semibold rounded-full">
+           <Link href="/booking">
+              <button className="btn btn-primary px-8 py-3 text-lg font-semibold rounded-full">
+                Book Now
+              </button>
+           </Link >
+            <ScrollLink
+              to="services"
+        smooth={true}
+        duration={800}
+        
+            
+            className="btn btn-outline text-white border-white hover:bg-white hover:text-black px-8 py-3 text-lg font-semibold rounded-full">
               Explore Treatments
-            </button>
+            </ScrollLink>
           </motion.div>
         </motion.div>
       </div>

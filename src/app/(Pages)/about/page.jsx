@@ -39,7 +39,7 @@ export default function AboutPage() {
         <div className="flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/2">
             <Image
-              src="/hero.jpg" // Update this to your actual image path
+              src="/about.jpg" 
               alt="Klipp Södermalm"
               width={600}
               height={400}

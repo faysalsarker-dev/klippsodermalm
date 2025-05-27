@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const AboutUs = () => {
@@ -42,13 +43,19 @@ const AboutUs = () => {
           viewport={{ once: true }}
           className="md:w-1/2 relative"
         >
-          <div className="clip-path-container overflow-hidden rounded-xl shadow-lg">
-            <img
-              src="/hero.jpg"
-              alt="Salong på Södermalm"
-              className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-            />
-          </div>
+<div className="relative w-full max-w-5xl h-[400px] md:h-[500px] mx-auto rounded-xl overflow-hidden shadow-lg group">
+  {/* Background Image */}
+  <Image
+    width={600}
+    height={500}
+    src="/about.jpg"
+    alt="Salong på Södermalm"
+    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+  />
+
+  {/* Overlay */}
+</div>
+
         </motion.div>
       </div>
     </section>

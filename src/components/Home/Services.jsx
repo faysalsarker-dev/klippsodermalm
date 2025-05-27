@@ -26,7 +26,9 @@ export default function Services() {
   ];
 
   return (
-    <section className="py-16 px-4 bg-background-secondary text-white min-h-screen flex items-center">
+    <section 
+    id="services"
+    className="py-16 px-4 bg-background-secondary text-white min-h-screen flex items-center">
       <div className="max-w-6xl mx-auto text-center">
         <motion.h2
           className="text-4xl font-bold mb-4 tracking-wide"
