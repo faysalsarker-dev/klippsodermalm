@@ -19,8 +19,8 @@ const formattedDate = new Date(blog?.createdAt).toLocaleDateString("en-US", {
   return (
     <div className={`card shadow-xl hover:shadow-2xl transition duration-300 p-2 ${className}`}>
       <figure className="relative w-full h-48">
-        <img
-          src={`${process.env.NEXT_PUBLIC_API_URL}${blog?.image}`}
+        <Image
+          src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${blog?.image}`}
           alt={blog?.title}
           fill
           className="object-cover rounded-xl"

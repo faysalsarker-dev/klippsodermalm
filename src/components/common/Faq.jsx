@@ -5,24 +5,34 @@ import { motion } from 'framer-motion';
 
 const faqData = [
   {
-    question: 'Gör det ont att ta hål i öronen eller göra en piercing?',
+    question: 'Gör ni piercing med nål?',
     answer:
-      'Ett skala (1–10 så är det ca.2) med nål är smärtan ännu mindre, men den varierar beroende på område och individ, men vi använder skonsamma metoder för att minimera obehag.',
+      'Ja, vi gör all piercing med nål. Det är säkrare och gör mindre skada på huden.',
   },
   {
-    question: 'Hur lång tid tar det för en piercing att läka?',
+    question: 'Var kan jag pierca örat i Stockholm?',
     answer:
-      'Läkningstiden beror på placeringen. Öronhål tar vanligtvis 4–6 veckor medan broskpiercingar kan ta flera månader.',
+      'Hos oss på Klipp Södermalm kan du pierca örat i Stockholm på ett tryggt och hygieniskt sätt.',
   },
   {
-    question: 'Vilken typ av smycken används vid första piercingen?',
+    question: 'Erbjuder ni öronhåltagning för barn?',
     answer:
-      'Vi använder endast sterila och allergivänliga smycken i titan och silver och guldpläterade pluppar för öronhåltagning.',
+      'Ja! Vi gör öronhåltagning i Stockholm för både barn och vuxna, med lugn och försiktighet.',
   },
   {
-    question: 'Hur sköter jag min nya piercing?',
+    question: 'Vad är lash lift och hur länge håller det?',
     answer:
-      'Vi ger dig detaljerade eftervårdsinstruktioner och rekommenderar att du rengör piercingen med en mild saltlösning dagligen.',
+      'Lash lift gör dina egna fransar naturligt böjda och fylliga. Behandlingen håller i ungefär 6 till 8 veckor. Vi erbjuder lash lift i Stockholm med skonsam och trygg metod.',
+  },
+  {
+    question: 'Gör ni navelpiercing?',
+    answer:
+      'Ja, vi erbjuder navelpiercing i Stockholm med steril nål och smycken av hög kvalitet.',
+  },
+  {
+    question: 'Kan jag klippa mig hos er?',
+    answer:
+      'Självklart! Vi gör hårklippning i Stockholm för både damer, herrar och barn.',
   },
 ];
 
@@ -60,6 +70,8 @@ const Faq = () => {
                 
                 defaultChecked={i === 0} 
                 className="peer" />
+
+
 
                 <div className="collapse-title text-lg font-semibold text-primary">
                   {faq.question}

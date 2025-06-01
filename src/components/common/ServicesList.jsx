@@ -1,61 +1,55 @@
-
 "use client";
 
 import axiosInstance from "@/app/lib/axios";
 import ServicesCard from "./ServicesCard";
 import { useQuery } from "@tanstack/react-query";
+import ServicesCardSkeleton from "./ServicesCardSkeleton";
 
-const services = [
-  {
-    id: "ear-piercing",
-    name: "Ear Piercing",
-    description: "Precision ear lobe and cartilage piercing",
-    price: 30,
-  },
-  {
-    id: "nose-piercing",
-    name: "Nose Piercing",
-    description: "Safe and sterile nostril piercing",
-    price: 25,
-  },
-  {
-    id: "belly-piercing",
-    name: "Belly Button Piercing",
-    description: "Trendy navel piercing with aftercare",
-    price: 40,
-  },
-  {
-    id: "eyebrow-piercing",
-    name: "Eyebrow Piercing",
-    description: "Stylish brow piercing with precision",
-    price: 35,
-  },
-];
-
-
-const ServicesList = ({category}) => {
-
-  const { data=[], isLoading, refetch } = useQuery({
-    queryKey: ["services",category],
+const ServicesList = ({ category }) => {
+  const {
+    data = [],
+    isLoading,
+    isError,
+    refetch,
+  } = useQuery({
+    queryKey: ["services", category],
     queryFn: async () => {
       const res = await axiosInstance.get(`/price/klippsodermalm/${category}`);
       return res.data;
     },
   });
-    
 
-console.log(data,category,'dataa');
+  return (
+    <div className="space-y-6">
+      {/* Loading State */}
+      {isLoading && (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {Array.from({ length: 6 }).map((_, index) => (
+            <ServicesCardSkeleton key={index} />
+          ))}
+        </div>
+      )}
 
+      {/* Error State */}
+      {isError && (
+        <div className="text-red-500 text-center">
+          Error loading services. Please try again later.
+        </div>
+      )}
 
-    return (
-        <div>
-                  <div className="space-y-6">
+      {/* Loaded State */}
+      {!isLoading && !isError && (
+        <>
+         
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6">
             {data.map((service) => (
-            <ServicesCard key={service._id} service={service}/>
+              <ServicesCard key={service._id} service={service} />
             ))}
           </div>
-        </div>
-    );
+        </>
+      )}
+    </div>
+  );
 };
 
 export default ServicesList;

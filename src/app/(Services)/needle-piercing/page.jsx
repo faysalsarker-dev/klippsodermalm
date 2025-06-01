@@ -2,9 +2,9 @@ import OfferBanners from "@/components/common/OfferBanners";
 import ServicesList from "@/components/common/ServicesList";
 
 export const metadata = {
-  title: "Needle Piercing Services | Safe, Professional & Stylish",
+  title: "Piercing med Nål i Stockholm – Trygg & Professionell | Klipp Södermalm",
   description:
-    "Explore premium needle piercing services including ear, nose, and belly piercings by certified professionals. 100% hygienic & 4.8★ rated on Google.",
+    "Säker och hygienisk piercing med nål i Stockholm. Vi erbjuder näspiercing, navelpiercing & öronpiercing med nål på Södermalm. Boka tid enkelt online!",
 };
 
 export default function page() {
@@ -18,9 +18,9 @@ export default function page() {
         <div className="hero-overlay"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-xl">
-            <h1 className="text-4xl font-bold drop-shadow mb-3">Needle Piercing Services</h1>
+            <h1 className="text-4xl font-bold drop-shadow mb-3">Piercing med Nål i Stockholm</h1>
             <p className="text-lg">
-              Safe, hygienic, and stylish needle piercings by certified professionals. Trusted by hundreds with a 4.8★ rating on Google.
+              Letar du efter säker och professionell piercing med nål i Stockholm? Hos Klipp Södermalm får du en trygg behandling av erfarna piercare – mitt på Södermalm.
             </p>
           </div>
         </div>
@@ -31,43 +31,44 @@ export default function page() {
         {/* Google Rating */}
         <section className="text-center">
           <p className="text-lg font-medium">
-            ⭐ <span className="text-primary font-bold">4.8/5</span> Google Rating — Based on real customer reviews
+            ⭐ <span className="text-primary font-bold">4.8/5</span> Google Rating — Baserat på riktiga kundrecensioner
           </p>
         </section>
 <section><OfferBanners /></section>
 
         {/* Services List */}
         <section>
-          <h2 className="text-2xl font-semibold mb-6 text-center">Our Needle Piercing Services</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-center">Våra nålpiercingstjänster</h2>
           <ServicesList category={`needles piercing`} />
         </section>
 
         {/* Aftercare Tips */}
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Piercing Aftercare Tips</h2>
+          <h2 className="text-2xl font-semibold mb-4">Vad vi erbjuder:
+Näspiercing med nål</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Clean the area twice daily using a saline solution.</li>
-            <li>Avoid touching or rotating the jewelry without washing hands.</li>
-            <li>Keep the area dry and avoid swimming for at least 7 days.</li>
-            <li>Avoid makeup, creams, or perfumes near the piercing site.</li>
+            <li>Näspiercing med nål</li>
+            <li>Navelpiercing med nål</li>
+            <li>Öronpiercing med nål (helix, tragus, conch m.m.)</li>
+            <li>Piercing i Stockholm för både kvinnor och män</li>
           </ul>
         </section>
 
         {/* Why Choose Us */}
         <section>
-          <h2 className="text-2xl font-semibold mb-6">Why Choose Us?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="card bg-background shadow-md p-5">
-              <h3 className="font-bold text-lg mb-2">Certified Professionals</h3>
-              <p>All our piercers are certified, trained, and experienced in needle techniques.</p>
-            </div>
-            <div className="card bg-background shadow-md p-5">
-              <h3 className="font-bold text-lg mb-2">Sterile & Safe</h3>
-              <p>We use only sterilized tools and single-use needles for complete hygiene.</p>
-            </div>
-            <div className="card bg-background shadow-md p-5">
-              <h3 className="font-bold text-lg mb-2">Style Options</h3>
-              <p>Choose from a range of jewelry and piercing placements to match your style.</p>
+          <h2 className="text-2xl font-semibold mb-6">Varför välja oss?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
+      
+          
+      <ul className="list-disc list-inside space-y-2">
+            <li>Vi har lång erfarenhet av nålpiercing</li>
+            <li>Allt utförs med sterila verktyg och hög hygien</li>
+            <li>Vi använder smycken i hög kvalitet som passar din stil</li>
+            <li>Du får tydliga eftervårdsråd efter din piercing</li>
+          </ul>
+
+      <div className="card bg-background shadow-md p-5">
+              <p>Oavsett om det är din första piercing eller om du vill lägga till fler – vi hjälper dig hela vägen. Vi är din lokala piercingstudio i Stockholm du kan lita på.</p>
             </div>
           </div>
         </section>

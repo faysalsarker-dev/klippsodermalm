@@ -58,9 +58,11 @@ const formattedDate = new Date(post?.createdAt).toLocaleDateString("en-US", {
       <h1 className="text-4xl font-bold  mb-6">{post.title}</h1>
 
       {post.image && (
-        <img
-          src={post.image}
+        <Image
+          src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${post.image}`}
           alt={post.title}
+          width={800}
+          height={450}
           className="w-full h-auto rounded-xl shadow-md mb-10"
         />
       )}

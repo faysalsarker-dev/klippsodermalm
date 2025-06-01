@@ -1,21 +1,42 @@
-'use client';
-
+"use client";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+
+
+
 
 const Navbar = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+ const [existingBooking, setExistingBooking] = useState([]);
+   const [hasMounted, setHasMounted] = useState(false);
 
-  const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Book', path: '/booking' },
-    { name: 'Blogs', path: '/blog' },
-  ];
+
+  useEffect(() => {
+        setHasMounted(true);
+
+    const stored = localStorage.getItem("myBookings");
+    if (stored) {
+     
+        setExistingBooking(JSON.parse(stored));
+      
+    }
+  }, []);
+
+
+const navItems = [
+  { name: 'Home', path: '/' },
+  { name: 'About', path: '/about' },
+  { name: 'Book', path: '/booking' },
+  { name: 'Blogs', path: '/blog' },
+  ...(existingBooking.length > 0
+    ? [{ name: 'My Bookings', path: '/my-bookings' }]
+    : []),
+];
+
 
   const linkClass = (path) =>
     `block px-4 py-2 text-base font-medium rounded-md ${
@@ -27,7 +48,6 @@ const Navbar = () => {
   return (
     <header className="w-full shadow-sm text-white ">
       <div className="navbar max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-        {/* Left: Logo & Hamburger */}
         <div className="flex items-center gap-2">
        
 
@@ -46,9 +66,9 @@ const Navbar = () => {
 
         {/* Center: Desktop Nav */}
         <nav className="hidden lg:flex gap-6">
-          {navItems.map((item) => (
+          {navItems.map((item,idx) => (
             <Link
-              key={item.path}
+              key={idx}
               href={item.path}
               className={linkClass(item.path)}
               aria-label={item.name}
@@ -119,7 +139,6 @@ const Navbar = () => {
 
       </div>
 
-      {/* Mobile Drawer */}
       <AnimatePresence>
         {isOpen && (
           <>

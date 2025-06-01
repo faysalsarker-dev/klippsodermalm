@@ -127,6 +127,16 @@ body {
   font-style: italic;
 }
 
+.blog-content ol li::marker {
+  color: #8B5CF6; 
+  font-weight: bold; 
+}
+
+.blog-content ul li::marker {
+  color: #06B6D4; 
+  font-weight: bold; 
+}
+
 /* Image */
 .blog-content img {
   max-width: 100%;
@@ -210,9 +220,9 @@ body {
   margin-left: 6em;
 }
 
-/* Bold/Italic/Underline/Strike (optional if content includes these) */
 .blog-content strong {
   font-weight: bold;
+  color: white;
 }
 .blog-content em {
   font-style: italic;
@@ -224,7 +234,6 @@ body {
   text-decoration: line-through;
 }
 
-/* Color & background — fallback only, you can map more if needed */
 .blog-content [style*="color:"] {
   color: inherit !important;
 }

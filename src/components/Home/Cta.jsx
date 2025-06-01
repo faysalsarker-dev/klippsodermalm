@@ -18,14 +18,16 @@ const Cta = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center ">
-        <h2 className="text-4xl sm:text-5xl font-extrabold mb-6">Ready for a New Look?</h2>
+        <h2 className="text-4xl sm:text-5xl font-extrabold mb-6">Boka Din Tid hos Klipp Södermalm Idag</h2>
         <p className="text-lg sm:text-xl mb-8">
-          Discover professional piercing and microneedling services that bring out your best self. Book an appointment today and experience the transformation.
+        Redo för en ny piercing, lash lift eller hårklippning i Stockholm?
+Vi erbjuder trygga behandlingar med erfarna specialister på Södermalm.
+ Boka enkelt online och få en tid som passar dig!
         </p>
         <Link href="/booking">
       <button className="btn btn-primary">
              
-                Book Now
+                Boka Nu
            
       </button >
         </Link>

@@ -5,33 +5,23 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 
-// const offerData = {
-//   _id: '68359512bf7f1cba82669d63',
-//   title: 'Special Piercing Offer!',
-//   content: [
-//     `<h2 style="color:white">Limited Time Only!</h2><p style="color:white"><span style="background-color: rgba(230,0,0,0.5); padding: 4px;">Get exclusive discounts on all piercings this week. Walk-in welcome!</span></p>`,
-//   ],
-//   imageUrl:
-//     '1748342034685-521710209-Close-up, super realistic image of an ear piercing. Client\'s earlobe in focus, piercer\'s gloved hands visible, sterile needle. Smooth color gradient transitions. Adorable and charming features.jpg',
-//   redirectUrl: '/',
-//   displayOn: ['/'],
-//   isActive: true,
-// };
+
 
 export default function OfferCard({offerData}) {
   const pathname = usePathname();
 
   if (!offerData?.isActive || !offerData?.displayOn.includes(pathname)) {
+
     return null;
   }
-
+console.log(offerData,'data');
 
   return (
     <section
-      className="relative w-full h-[400px] rounded-xl overflow-hidden shadow-xl my-8"
+      className="relative w-full h-[500px] rounded-xl overflow-hidden shadow-xl my-8"
     >
       <Image
-        src={`/hero.jpg`}
+          src={`/offers.jpg`}
         alt="Special Offer Background"
         fill
         className="object-cover object-center brightness-75"

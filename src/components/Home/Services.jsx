@@ -6,20 +6,20 @@ export default function Services() {
   const services = [
     {
       name: "Needle Piercing",
-      description: "Precise and hygienic needle piercings performed with expert technique for a clean, professional result.",
+      description: "Vi gör piercing med nål för bättre precision och snabbare läkning. Passar för navelpiercing, näspiercing, och öronpiercing i Stockholm.",
       icon: "/needls.png",
       path:'/needle-piercing'
     },
     {
       name: "Gun Piercing",
-      description: "Quick and stylish piercings using sterilized piercing guns for a safe and trendy experience.",
+      description: "Vi erbjuder öronhåltagning i Stockholm med pistol – ett snabbt och enkelt val, särskilt för barn och örsnibbar.",
       icon: "/gun.png",
             path:'/gun-piercing'
 
     },
     {
       name: "Microneedling",
-      description: "Boost skin health and glow with advanced microneedling sessions tailored for rejuvenation.",
+      description: "Vår microneedling-behandling hjälper huden att se friskare och slätare ut. Bra för dig med ärr, stora porer eller trött hud.",
       icon: "/microneedls.png",
             path:'/microneedling'
     },
@@ -36,7 +36,7 @@ export default function Services() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Specialized Piercing & Skin Care
+          Våra Specialtjänster
         </motion.h2>
         <motion.p
           className="text-lg mb-12 text-muted-foreground"
@@ -44,7 +44,9 @@ export default function Services() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          Discover expert services designed for precision, safety, and personal expression.
+        Experter på Piercing & Hudvård i Stockholm
+Vi erbjuder trygga behandlingar som passar din stil och hud.
+Från piercing med nål till microneedling, varje steg görs med noggrannhet, hygien och omtanke.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

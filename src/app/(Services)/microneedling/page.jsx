@@ -2,9 +2,9 @@ import OfferBanners from "@/components/common/OfferBanners";
 import ServicesList from "@/components/common/ServicesList";
 
 export const metadata = {
-  title: "Needle Piercing Services | Safe, Professional & Stylish",
+  title: "Microneedling i Stockholm – Hudförbättring på Klipp Södermalm",
   description:
-    "Explore premium needle piercing services including ear, nose, and belly piercings by certified professionals. 100% hygienic & 4.8★ rated on Google.",
+    "Professionell microneedling i Stockholm för friskare hud. Behandling mot ärr, stora porer & fina linjer. Boka din tid på Södermalm idag!",
 };
 
 export default function page() {
@@ -18,9 +18,9 @@ export default function page() {
         <div className="hero-overlay"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-xl">
-            <h1 className="text-4xl font-bold drop-shadow mb-3">Gun Piercing Services</h1>
+            <h1 className="text-4xl font-bold drop-shadow mb-3">Microneedling i Stockholm – För Friskare Hud</h1>
             <p className="text-lg">
-              Safe, hygienic, and stylish needle piercings by certified professionals. Trusted by hundreds with a 4.8★ rating on Google.
+           Vill du ha jämnare, fräschare och yngre hud? På Klipp Södermalm erbjuder vi professionell microneedling i Stockholm – en beprövad behandling som stärker din hud på naturligt sätt
             </p>
           </div>
         </div>
@@ -31,7 +31,7 @@ export default function page() {
         {/* Google Rating */}
         <section className="text-center">
           <p className="text-lg font-medium">
-            ⭐ <span className="text-primary font-bold">4.8/5</span> Google Rating — Based on real customer reviews
+            ⭐ <span className="text-primary font-bold">4.8/5</span> Google Rating — Baserat på riktiga kundrecensioner
           </p>
         </section>
 
@@ -39,37 +39,31 @@ export default function page() {
 
         {/* Services List */}
         <section>
-          <h2 className="text-2xl font-semibold mb-6 text-center">Our Microneedling Services</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-center">Våra Microneedling-tjänster</h2>
           <ServicesList category={`microneedling`} />
         </section>
 
         {/* Aftercare Tips */}
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Piercing Aftercare Tips</h2>
+          <h2 className="text-2xl font-semibold mb-4">Fördelar med microneedling</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Clean the area twice daily using a saline solution.</li>
-            <li>Avoid touching or rotating the jewelry without washing hands.</li>
-            <li>Keep the area dry and avoid swimming for at least 7 days.</li>
-            <li>Avoid makeup, creams, or perfumes near the piercing site.</li>
+            <li>Jämnare hudton och hudstruktur</li>
+            <li>Minskar fina linjer och rynkor</li>
+            <li>Hjälper mot akneärr och pigmentfläckar</li>
+            <li>Ger huden ny lyster och spänst</li>
+            <li>Passar alla hudtyper</li>
           </ul>
         </section>
 
         {/* Why Choose Us */}
         <section>
-          <h2 className="text-2xl font-semibold mb-6">Why Choose Us?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+       
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
             <div className="card bg-background shadow-md p-5">
-              <h3 className="font-bold text-lg mb-2">Certified Professionals</h3>
-              <p>All our piercers are certified, trained, and experienced in needle techniques.</p>
+              <p>Vi jobbar med hög hygienstandard och anpassar varje behandling efter din hudtyp. Behandlingen tar ca 45–60 minuter och vi ger dig tydliga råd för eftervård.</p>
             </div>
-            <div className="card bg-background shadow-md p-5">
-              <h3 className="font-bold text-lg mb-2">Sterile & Safe</h3>
-              <p>We use only sterilized tools and single-use needles for complete hygiene.</p>
-            </div>
-            <div className="card bg-background shadow-md p-5">
-              <h3 className="font-bold text-lg mb-2">Style Options</h3>
-              <p>Choose from a range of jewelry and piercing placements to match your style.</p>
-            </div>
+         
+       
           </div>
         </section>
       </main>

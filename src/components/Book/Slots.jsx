@@ -12,6 +12,14 @@ import toast from "react-hot-toast";
 import { useSearchParams } from "next/navigation";
 import ServiceRequiredNotice from "./ServiceRequiredNotice";
 
+const extractNumericPrice = (value) => {
+  const match = String(value).match(/[\d.,]+/);
+  if (!match) return 0;
+  return parseFloat(match[0].replace(/,/g, ""));
+};
+
+
+
 
 const Slots = ({slotdetails, isLoading, isError, refetch, date}) => {
   const [selectedSlot, setSelectedSlot] = useState(null);
@@ -28,7 +36,7 @@ const Slots = ({slotdetails, isLoading, isError, refetch, date}) => {
         `/price/${id}`
         
       );
-      return {service:data?.title , price:data?.discountedPrice};
+      return {service:data?.title , price:extractNumericPrice(data?.discountedPrice)};
     },
     enabled: !!id,
   });
@@ -43,7 +51,16 @@ const Slots = ({slotdetails, isLoading, isError, refetch, date}) => {
     },
     onSuccess: (data) => {
 
-        console.log(data, "data");
+
+
+      if (data?.booking?._id) {
+  const existing = JSON.parse(localStorage.getItem("myBookings")) || [];
+  if (!existing.includes(data.booking._id)) {
+    const updated = [...existing, data.booking._id];
+    localStorage.setItem("myBookings", JSON.stringify(updated));
+  }
+}
+
       toast.success("Booking confirmed successfully.",{
             style: {
       borderRadius: '10px',
@@ -51,13 +68,6 @@ const Slots = ({slotdetails, isLoading, isError, refetch, date}) => {
       color: '#fff',
     },
       });
-
-      
-      const existing = JSON.parse(localStorage.getItem("myBookings")) || [];
-      console.log(data.booking._id, "data.booking._id");
-      const updated = [...existing, data.booking._id];
-      localStorage.setItem("myBookings", JSON.stringify(updated));
-  
       reset();
       refetch(); 
     },
@@ -83,7 +93,8 @@ const Slots = ({slotdetails, isLoading, isError, refetch, date}) => {
       bookingDate: date,
         slot: selectedSlot,
         ...data,
-       ...serviesInfo
+       ...serviesInfo,
+       web:'klippsodermalm',
     };
     mutateAsync(bookingData);
   };

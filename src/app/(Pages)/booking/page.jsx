@@ -1,20 +1,51 @@
 "use client";
 
-import React, { useState } from "react";
-import { format } from "date-fns";
+import React, { useEffect, useState } from "react";
 import { DayPicker } from "react-day-picker";
 import classNames from "react-day-picker/dist/style.css";
 import { useQuery } from "@tanstack/react-query";
 import Slots from "@/components/Book/Slots";
 import  axiosInstance  from '@/app/lib/axios';
 
+import { Suspense } from "react";
+import { format, isToday, parseISO } from 'date-fns';
 
+const filterAvailableSlots = ({ slots, isDayOff }, selectedDate) => {
+  if (isDayOff) {
+    return [];
+  }
+
+  const selected = parseISO(selectedDate); 
+  const now = new Date();
+
+  if (isToday(selected)) {
+    const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+    return slots.filter(time => {
+      const [hour, minute] = time.trim().split(':').map(Number);
+      const slotMinutes = hour * 60 + minute;
+      return slotMinutes > currentMinutes;
+    });
+  }
+
+ 
+  return slots.map(t => t.trim());
+};
 
 
 
 
 const BookingPage = () => {
-  const [date, setDate] = useState(format(new Date(), "yyyy-MM-dd"));
+  const [date, setDate] = useState(null);
+
+
+useEffect(() => {
+  if (!date) {
+    const newDate = format(new Date(), "yyyy-MM-dd");
+    setDate(newDate);
+  }
+}, [date]);
+
 const today = new Date();
   today.setHours(0, 0, 0, 0);
  
@@ -33,6 +64,9 @@ const today = new Date();
 
 
 
+
+
+
   const handleDateSelect = (selectedDate) => {
     if (!selectedDate) return;
 
@@ -43,7 +77,9 @@ const today = new Date();
     refetch();
   };
 
-
+  const filteredSlots = slotdetails
+    ? filterAvailableSlots(slotdetails, date)
+    : [];
 
   return (
     <div className="min-h-screen py-10 px-4 md:px-10 flex flex-col gap-8 md:flex-row justify-center items-start bg-background-secondary">
@@ -67,8 +103,10 @@ const today = new Date();
       </div>
 
       {/* Booking Form */}
-    
-      <Slots date={date} slotdetails={slotdetails} isLoading={isLoading} isError={isError} refetch={refetch} />
+     <Suspense fallback={<p>Loading booking details...</p>}>
+             <Slots date={date}  slotdetails={{ ...slotdetails, slots: filteredSlots }} isLoading={isLoading} isError={isError} refetch={refetch} />
+
+      </Suspense>
     </div>
   );
 };

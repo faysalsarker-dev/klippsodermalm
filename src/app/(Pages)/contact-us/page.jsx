@@ -1,9 +1,9 @@
 'use client';
-
-import { useForm } from 'react-hook-form';
-import { useState } from 'react';
 import Image from 'next/image';
-
+import axiosInstance from '@/app/lib/axios';
+import { useMutation } from '@tanstack/react-query';
+import { useForm } from "react-hook-form";
+import toast from 'react-hot-toast';
 export default function page() {
   const {
     register,
@@ -12,13 +12,46 @@ export default function page() {
     reset,
   } = useForm();
 
-  const [submitted, setSubmitted] = useState(false);
+
+
+ const { mutateAsync, isPending } = useMutation({
+    mutationFn: async (info) => {
+      const { data } = await axiosInstance.post(`/send-email`, info);
+      
+      return data; 
+    },
+    onSuccess: () => {
+
+
+
+
+
+      toast.success("Massage send successfully.",{
+            style: {
+      borderRadius: '10px',
+      background: '#333',
+      color: '#fff',
+    },
+      });
+      reset();
+      refetch(); 
+    },
+    onError: () => {
+      toast.error("An error occurred while submitting your request.",{
+            style: {
+      borderRadius: '10px',
+      background: '#333',
+      color: '#fff',
+    },
+      });
+    },
+  });
+
 
   const onSubmit = (data) => {
     console.log(data);
-    setSubmitted(true);
+    mutateAsync(true);
     reset();
-    setTimeout(() => setSubmitted(false), 4000);
   };
 
   return (
@@ -95,17 +128,13 @@ export default function page() {
 
  <button
   type="submit"
+  disabled={isPending}
   className="btn btn-primary w-full text-base rounded-lg hover:bg-primary-dark hover:shadow-lg transition duration-300"
 >
   Skicka meddelande
 </button>
 
-    {/* Optional Success */}
-    {submitted && (
-      <div className="alert alert-success mt-4 text-sm">
-        ✅ Meddelandet skickades!
-      </div>
-    )}
+
   </form>
 </div>
 
@@ -117,7 +146,7 @@ export default function page() {
   <div className="space-y-3">
     <p>📧 <strong>E-post:</strong> <a href="mailto:piercingsodermalm@gmail.com" className="link link-primary">piercingsodermalm@gmail.com</a></p>
     <p>📞 <strong>Telefon:</strong> <a href="tel:08-6415057" className="link">08-6415057</a></p>
-    <p>📍 <strong>Adress:</strong><br />Piercing Södermalm<br />Åsögatan 128<br />11624 Stockholm, Sverige</p>
+    <p>📍 <strong>Adress:</strong><br />KlippSödermalm<br />Åsögatan 128<br />11624 Stockholm, Sverige</p>
     <p>🕒 <strong>Öppettider:</strong><br />Mån–Fre: 11:00–18:00<br />Lördag: 11:00–16:00<br />Söndag: Stängt</p>
   </div>
 </div>

@@ -19,8 +19,8 @@ const SpecialOffer = () => {
 
   return (
     <>
-      {data?.length > 0 && data.map((offer) => (
-  <OfferCard key={offer._id} offerData={data}/>
+      {data?.length > 0 && data?.map((offer) => (
+  <OfferCard key={offer._id} offerData={offer}/>
       ))}
     
     </>

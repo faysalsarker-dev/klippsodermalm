@@ -29,6 +29,7 @@
     "react-rating": "^2.0.5",
     "react-scroll": "^1.9.3",
     "striptags": "^3.2.0",
+    "sweetalert2": "^11.22.0",
     "swiper": "^11.2.6"
   },
   "devDependencies": {

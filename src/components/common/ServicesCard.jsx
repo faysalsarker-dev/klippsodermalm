@@ -20,7 +20,7 @@ const ServicesCard = ({service}) => {
                 <div className="relative z-50 w-20 h-20 rounded-md overflow-hidden flex-shrink-0">
                   <Image
                     src="/hero.jpg"
-                    alt={service?.name}
+                    alt={service?.title}
                     fill
                     className="object-cover"
                   />
@@ -36,8 +36,8 @@ const ServicesCard = ({service}) => {
 
                 {/* Price */}
 <div className="flex flex-col items-start text-primary z-50">
-  <span className="text-sm text-gray-500 line-through">${service?.regularPrice}</span>
-  <span className="text-base font-bold text-primary">${service?.discountedPrice}</span>
+{service?.regularPrice &&  <span className="text-sm text-gray-500 line-through">{service?.regularPrice}</span>
+}  <span className="text-base font-bold text-primary">{service?.discountedPrice}</span>
 </div>
 
               </Link>
