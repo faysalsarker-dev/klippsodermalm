@@ -8,7 +8,8 @@ const nextConfig = {
       'piercing-backend.vercel.app',
       'testing.pieringsodermalm.com',
       'test.pieringsodermalm.com',
-      'localhost'
+      'localhost',
+      'backend.piercingsodermalm.se'
     ],
     remotePatterns: [
       {
@@ -47,6 +48,11 @@ const nextConfig = {
         hostname: 'test.pieringsodermalm.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'backend.piercingsodermalm.se',
+        pathname: '/**',
+      }
     ],
   },
 };

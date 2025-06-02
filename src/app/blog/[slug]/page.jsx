@@ -55,12 +55,13 @@ const formattedDate = new Date(post?.createdAt).toLocaleDateString("en-US", {
         <section className="max-w-4xl mx-auto px-4 py-10  text-white">
           {/* Blog Header */}
            <main className="max-w-3xl mx-auto px-4 py-10">
-      <h1 className="text-4xl font-bold  mb-6">{post.title}</h1>
+      <h1 className="text-4xl font-bold  mb-6">{post?.title}</h1>
 
-      {post.image && (
+      {post?.image && (
         <Image
-          src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${post.image}`}
-          alt={post.title}
+          src={process.env.NEXT_PUBLIC_IMAGE_URL + post?.image}
+     
+          alt={post?.title}
           width={800}
           height={450}
           className="w-full h-auto rounded-xl shadow-md mb-10"

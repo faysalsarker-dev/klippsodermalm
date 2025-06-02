@@ -32,20 +32,19 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-         Klipp Södermalm – Skönhet & Piercing i Stockholm
+         Klipp Södermalm - Din skönhetssalong i hjärtat av Södermalm
 
 
           </motion.h1>
        
 
           <motion.p
-            className="mb-8 text-lg sm:text-xl text-gray-200"
+            className="mb-8 text-xl sm:text-2xl text-gray-200"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
-          Professionell hårklippning, öronhåltagning, piercing, lash lift och brow lift – allt på ett ställe.
-Trygg service i en modern och vänlig miljö på Södermalm.
+   Professionell piercing, öronhåltagning, microneedling, lash lift & hår - proffsigt och tryggt i en modern och välkomnande miljo.
           </motion.p>
 
           <motion.div

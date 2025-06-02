@@ -30,24 +30,8 @@ export default function Services() {
     id="services"
     className="py-16 px-4 bg-background-secondary text-white min-h-screen flex items-center">
       <div className="max-w-6xl mx-auto text-center">
-        <motion.h2
-          className="text-4xl font-bold mb-4 tracking-wide"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          Våra Specialtjänster
-        </motion.h2>
-        <motion.p
-          className="text-lg mb-12 text-muted-foreground"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-        >
-        Experter på Piercing & Hudvård i Stockholm
-Vi erbjuder trygga behandlingar som passar din stil och hud.
-Från piercing med nål till microneedling, varje steg görs med noggrannhet, hygien och omtanke.
-        </motion.p>
+    
+     
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((service, index) => (

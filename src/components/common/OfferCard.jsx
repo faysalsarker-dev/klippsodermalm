@@ -14,14 +14,13 @@ export default function OfferCard({offerData}) {
 
     return null;
   }
-console.log(offerData,'data');
 
   return (
     <section
       className="relative w-full h-[500px] rounded-xl overflow-hidden shadow-xl my-8"
     >
       <Image
-          src={`/offers.jpg`}
+        src={process.env.NEXT_PUBLIC_IMAGE_URL + offerData?.imageUrl}
         alt="Special Offer Background"
         fill
         className="object-cover object-center brightness-75"
@@ -45,7 +44,7 @@ console.log(offerData,'data');
             <Link
               href={offerData?.redirectUrl}
               className={(
-                'mt-4 inline-block px-6 py-3 rounded-lg font-medium transition-all border-primary border hover:bg-primary hover:text-white text-primary'
+                'mt-4 inline-block px-6 py-3 rounded-lg font-medium transition-all border-[#f97316] border-2 hover:bg-primary hover:text-white text-primary'
               )}
             >
               Check Out

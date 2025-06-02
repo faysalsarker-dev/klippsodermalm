@@ -14,7 +14,7 @@ const SpecialOffer = () => {
       return data;
     },
   });
-  if (isLoading) return <div>Loading offers...</div>;
+  if (isLoading) return <div></div>;
   if (error) return <div>Failed to load offers.</div>;
 
   return (

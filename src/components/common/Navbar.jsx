@@ -28,12 +28,15 @@ const Navbar = () => {
 
 
 const navItems = [
-  { name: 'Home', path: '/' },
-  { name: 'About', path: '/about' },
-  { name: 'Book', path: '/booking' },
-  { name: 'Blogs', path: '/blog' },
+  { name: 'Hem', path: '/' },
+  { name: 'Piercing', path: '/needle-piercing' },
+  { name: 'Öronhåltagning', path: '/gun-piercing' },
+  { name: 'Micro Needling', path: '/microneedling' },
+  { name: 'Om oss', path: '/about' },
+  // { name: 'Book', path: '/booking' },
+  { name: 'Bloggar', path: '/blog' },
   ...(existingBooking.length > 0
-    ? [{ name: 'My Bookings', path: '/my-bookings' }]
+    ? [{ name: 'Mina bokningar', path: '/my-bookings' }]
     : []),
 ];
 
@@ -65,7 +68,7 @@ const navItems = [
         </div>
 
         {/* Center: Desktop Nav */}
-        <nav className="hidden lg:flex gap-6">
+        <nav className="hidden lg:flex gap-3">
           {navItems.map((item,idx) => (
             <Link
               key={idx}
@@ -81,8 +84,8 @@ const navItems = [
         {/* Right: CTA */}
         <div className="hidden lg:flex">
           <Link href="/contact-us">
-            <button className="px-4 py-1 bg-primary text-white rounded-full shadow hover:opacity-90 transition">
-              Contact
+            <button className="px-4 py-1 btn-primary btn text-white rounded-full shadow hover:opacity-90 transition">
+              Kontakt
             </button>
           </Link>
         </div>
@@ -174,9 +177,9 @@ const navItems = [
               <Link href="/contact-us">
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="w-full mt-4 px-4 py-2 bg-primary text-white rounded-full shadow hover:opacity-90 transition"
+                  className="w-full mt-4 px-4 py-2 btn-primary btn text-white rounded-full shadow hover:opacity-90 transition"
                 >
-                  Contact
+                  Kontakt
                 </button>
               </Link>
             </motion.div>

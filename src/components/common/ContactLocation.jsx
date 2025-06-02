@@ -1,43 +1,47 @@
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 
+
+
+
 export default function ContactLocation() {
   return (
     <section className=" py-16 px-4 background-secondary">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 ">Hör av dig</h2>
 
         <div className="grid md:grid-cols-2  gap-8 items-center">
           {/* Contact Info */}
           <div>
-            <h3 className="text-xl font-semibold mb-3 ">We Are Here For You</h3>
+            <h3 className="text-xl font-semibold mb-3 ">Hör av dig – Vi finns här för dig!</h3>
             <p className=" mb-6">
-              For more info or inquiry about our products, project, and pricing please feel free to get in touch with us.
+        För mer information eller förfrågningar om våra produkter, projekt och priser är du välkommen att kontakta oss.
             </p>
 
             <div className="space-y-4 ">
               <div className="flex items-center gap-3">
-                <FaMapMarkerAlt className=" text-primary  p-1 " size={26} />
+                <FaMapMarkerAlt className="text-orange-500" size={26} />
                 <span>
-                  <span className="font-medium">Address:</span> 135 block, Barnard St. Brooklyn, NY 10036, USA
+                  <span className="font-medium">Address:</span> klippsodermalm Åsögatan.128, 11624 Stockholm, Sweden
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <FaPhoneAlt className="text-primary  p-1 " size={26} />
+                <FaPhoneAlt className="text-orange-500" size={26} />
                 <span>
-                  <span className="font-medium">Phone:</span> +123 45 67 89
-                </span>
+                 <a href="tel:086415057" className=" hover:underline">
+                    <span className="font-medium">Phone:</span> 08-6415057 </a>
+                  </span>
+                
               </div>
               <div className="flex items-center gap-3">
-                <FaEnvelope className="text-primary p-1" size={26} />
+                <FaEnvelope className=" text-orange-500  p-1" size={26} />
                 <span>
-                  <span className="font-medium">Email:</span> example@mail.com
+                  <span className="font-medium">Email:</span> piercingsodermalm@gmail.com
                 </span>
               </div>
             </div>
 
             <div className="mt-6">
               <p className="font-medium mb-2 ">Follow Us</p>
-              <div className="flex gap-4 text-primary text-xl">
+              <div className="flex gap-4 text-orange-500 text-xl">
                 <a href="#"><FaFacebookF /></a>
                 <a href="#"><FaTwitter /></a>
                 <a href="#"><FaLinkedinIn /></a>

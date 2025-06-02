@@ -17,16 +17,15 @@ const AboutUs = () => {
           className="md:w-1/2 text-center md:text-left"
         >
           <h2 className="text-4xl font-bold text-primary mb-6">
-            Klipp Södermalm 
+           Klipp Södermalm
           </h2>
 
           <p className="text-lg text-muted mb-4">
-            Välkommen till <strong className="text-primary">Klipp Södermalm</strong> – din professionella och prisvärda salong mitt i hjärtat av Södermalm. 
-            Vi har över 25 års erfarenhet och erbjuder behandlingar som <strong>piercing</strong>, <strong>öronhåltagning</strong> och <strong>microneedling</strong>.
+      Välkommen till Klipp Södermalm – din professionella och prisvärda salong mitt i hjärtat av Södermalm. Med över 25 års erfarenhet erbjuder vi behandlingar som piercing, öronhåltagning, microneedling och lashlift.
           </p>
 
           <p className="text-lg text-muted mb-6">
-            Boka enkelt online eller kom på <strong>drop-in</strong> – vi ser fram emot att ta hand om dig med noggrant utförda behandlingar.
+Boka enkelt online eller besök oss på drop-in – vi ser fram emot att ta hand om dig med noggrant utförda behandlingar.
           </p>
 
           {/* "Read More" Button */}

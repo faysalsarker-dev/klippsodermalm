@@ -19,7 +19,7 @@ const ServicesCard = ({service}) => {
 
                 <div className="relative z-50 w-20 h-20 rounded-md overflow-hidden flex-shrink-0">
                   <Image
-                    src="/hero.jpg"
+                    src={process.env.NEXT_PUBLIC_IMAGE_URL + service?.image}
                     alt={service?.title}
                     fill
                     className="object-cover"

@@ -63,24 +63,22 @@ export default function AboutPage() {
 
         <div className="bg-background-secondary rounded-xl p-6 md:p-10 space-y-6 shadow-md">
           <h2 className="text-2xl md:text-3xl font-semibold text-primary">
-            Våra Specialiteter
+            Våra behandlingar
           </h2>
-          <ul className="list-disc pl-5 space-y-3 text-white">
-            <li>
-              <strong className="text-primary">Piercing med nål</strong> – vi
-              utför säkra och stilrena piercingar i till exempel navel, näsa
-              och öra.
-            </li>
-            <li>
-              <strong className="text-primary">Öronhåltagning med pistol</strong> – skonsam håltagning med sterila metoder för både barn och
-              vuxna.
-            </li>
-            <li>
-              <strong className="text-primary">Microneedling</strong> – en
-              avancerad hudbehandling som förbättrar hudens struktur, minskar
-              porer och ger en fräschare känsla.
-            </li>
-          </ul>
+          <div className=" space-y-3 text-white">
+            <div>
+              <strong className="text-primary">Piercing med nål</strong>  – vi utför säkra och stilrena piercingar, till exempel i navel, näsa och öra.
+            </div>
+            <div>
+              <strong className="text-primary">Öronhåltagning med pistol</strong> – skonsam och steril håltagning för både vuxna & barn oavsett ålder.
+            </div>
+            <div>
+              <strong className="text-primary">Microneedling</strong> – en effektiv hudbehandling som stimulerar kollagen, förbättrar hudens struktur, minskar porer och fina linjer, jämnar ut hudtonen och ger en fastare, fräschare och mer ungdomlig hud.
+            </div>
+            <div>
+              <strong className="text-primary">Eyelash Lift</strong> – en skonsam behandling som lyfter och böjer dina naturliga fransar, ofta i kombination med färgning och keratinbehandling för starkare och glansigare fransar. Ger ett mascara-liknande resultat som håller i flera veckor – ett perfekt alternativ till fransförlängning.
+            </div>
+          </div>
         </div>
 
         <div className="text-center space-y-3">
