@@ -144,7 +144,7 @@ export default function page() {
       <div className="w-full md:w-1/3 card bg-background text-white p-6 shadow-lg rounded-xl">
   <h2 className="text-xl font-semibold text-primary mb-4">Kom i kontakt</h2>
   <div className="space-y-3">
-    <p>📧 <strong>E-post:</strong> <a href="mailto:piercingsodermalm@gmail.com" className="link link-primary">piercingsodermalm@gmail.com</a></p>
+    <p>📧 <strong>E-post:</strong> <a href="mailto:klippsodermalm1@gmail.com" className="link link-primary">klippsodermalm1@gmail.com</a></p>
     <p>📞 <strong>Telefon:</strong> <a href="tel:08-6415057" className="link">08-6415057</a></p>
     <p>📍 <strong>Adress:</strong><br />KlippSödermalm<br />Åsögatan 128<br />11624 Stockholm, Sverige</p>
     <p>🕒 <strong>Öppettider:</strong><br />Mån–Fre: 11:00–18:00<br />Lördag: 11:00–16:00<br />Söndag: Stängt</p>

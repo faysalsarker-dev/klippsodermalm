@@ -14,6 +14,7 @@ import ContactLocation from "@/components/common/ContactLocation";
 import Faq from "@/components/common/Faq";
 import ReviewList from "@/components/common/ReviewList";
 import OfferBanners from "@/components/common/OfferBanners";
+import Chat from "@/components/Home/Chat";
 
 export default function Home() {
   return (
@@ -75,6 +76,7 @@ export default function Home() {
         <section>
           <ContactLocation />
         </section>
+        <Chat/>
       </main>
     </>
   );

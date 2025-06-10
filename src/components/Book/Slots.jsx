@@ -114,7 +114,7 @@ const Slots = ({slotdetails, isLoading, isError, refetch, date}) => {
     return (
       <div className="w-full md:w-1/2 bg-background rounded-2xl shadow-md p-6">
         <h2 className="text-2xl font-semibold mb-4 text-center">
-   {!id ? null :` Pick a Slot (${format(date, "PPP")}) `}
+   {!id ? null :` Välj en slot (${format(date, "PPP")}) `}
 
         </h2>
 
@@ -142,7 +142,7 @@ isLoading ? (
 ) : isError ? (
   <div className="w-full text-center py-10">
     <p className="text-red-500 font-semibold">
-      Failed to load slot details. Please try again.
+    Misslyckades med att ladda information om platsen. Försök igen.
     </p>
   </div>
 ) : slotdetails?.isDayOff ? (
@@ -156,7 +156,7 @@ isLoading ? (
 slotdetails?.slots?.length === 0 ? (
   <div className="w-full text-center py-10">
     <p className="text-red-500 font-semibold">
-      No slots available for this date. Please choose another date.
+     Inga lediga tider för detta datum. Välj ett annat datum.
     </p>
   </div>
 ) :
@@ -173,7 +173,7 @@ slotdetails?.slots?.length === 0 ? (
       className={`py-2 px-4 rounded-lg font-bold transition-all duration-200 border
             ${
               selectedSlot === slot
-                ? "bg-primary text-white border-primary"
+                ? "bg-gradient-to-r from-orange-500 to-yellow-300 text-white "
                 : "bg-gray-500 text-white border-background-secondary hover:bg-primary hover:text-white hover:border-primary"
             }`}
       >
@@ -217,14 +217,14 @@ slotdetails?.slots?.length === 0 ? (
         <button
           type="submit"
           disabled={isPending}
-          className="bg-primary hover:bg-primary/90 text-white py-3 rounded-lg font-medium transition-all"
+          className="btn-primary btn hover:btn-primary/90 text-white py-3 rounded-lg font-medium transition-all"
         >
         {
           isPending ? (
      <span className="loading loading-bars loading-sm"></span>
 
           
-          ) : 'Confirm Booking'}
+          ) : 'Bekräfta bokning'}
        
         </button>
       </form>

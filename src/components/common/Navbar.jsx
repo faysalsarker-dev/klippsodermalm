@@ -12,7 +12,7 @@ const Navbar = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
  const [existingBooking, setExistingBooking] = useState([]);
-   const [hasMounted, setHasMounted] = useState(false);
+   const [_, setHasMounted] = useState(false);
 
 
   useEffect(() => {
@@ -32,6 +32,8 @@ const navItems = [
   { name: 'Piercing', path: '/needle-piercing' },
   { name: 'Öronhåltagning', path: '/gun-piercing' },
   { name: 'Micro Needling', path: '/microneedling' },
+  { name: 'Lash Lift', path: '/lash-lift' },
+  { name: 'Herrfrisyr', path: '/herrfrisyr' },
   { name: 'Om oss', path: '/about' },
   // { name: 'Book', path: '/booking' },
   { name: 'Bloggar', path: '/blog' },
@@ -68,7 +70,7 @@ const navItems = [
         </div>
 
         {/* Center: Desktop Nav */}
-        <nav className="hidden lg:flex gap-3">
+        <nav className="hidden lg:flex gap-2">
           {navItems.map((item,idx) => (
             <Link
               key={idx}

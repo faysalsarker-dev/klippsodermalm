@@ -18,7 +18,7 @@ export default function page() {
         <div className="hero-overlay"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-xl">
-            <h1 className="text-4xl font-bold drop-shadow mb-3">Microneedling i Stockholm – För Friskare Hud</h1>
+            <h1 className="text-4xl font-bold drop-shadow mb-3 text-primary">Microneedling i Stockholm – För Friskare Hud</h1>
             <p className="text-lg">
            Vill du ha jämnare, fräschare och yngre hud? På Klipp Södermalm erbjuder vi professionell microneedling i Stockholm – en beprövad behandling som stärker din hud på naturligt sätt
             </p>
@@ -39,13 +39,13 @@ export default function page() {
 
         {/* Services List */}
         <section>
-          <h2 className="text-2xl font-semibold mb-6 text-center">Våra Microneedling-tjänster</h2>
+          {/* <h2 className="text-2xl font-semibold mb-6 text-center">Våra Microneedling-tjänster</h2> */}
           <ServicesList category={`microneedling`} />
         </section>
 
         {/* Aftercare Tips */}
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Fördelar med microneedling</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-primary">Fördelar med microneedling</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Jämnare hudton och hudstruktur</li>
             <li>Minskar fina linjer och rynkor</li>
@@ -60,7 +60,7 @@ export default function page() {
        
           <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
             <div className="card bg-background shadow-md p-5">
-              <p>Vi jobbar med hög hygienstandard och anpassar varje behandling efter din hudtyp. Behandlingen tar ca 45–60 minuter och vi ger dig tydliga råd för eftervård.</p>
+              <p>Vi jobbar med hög hygienstandard och anpassar varje behandling efter din hudtyp. Behandlingen tar ca 40 minuter och vi ger dig tydliga råd för eftervård.</p>
             </div>
          
        

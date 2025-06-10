@@ -24,7 +24,7 @@ const ServicesList = ({ category }) => {
       {/* Loading State */}
       {isLoading && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6">
-          {Array.from({ length: 6 }).map((_, index) => (
+          {Array.from({ length: 4 }).map((_, index) => (
             <ServicesCardSkeleton key={index} />
           ))}
         </div>
@@ -37,15 +37,28 @@ const ServicesList = ({ category }) => {
         </div>
       )}
 
+
+
+
       {/* Loaded State */}
       {!isLoading && !isError && (
         <>
          
-          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6">
-            {data.map((service) => (
+
+{data?.length === 0 ? (
+  <p className="text-center text-gray-200 mt-6">
+    Inga tjänster tillgängliga just nu. Vänligen återkom senare!
+  </p>
+) : (
+ <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6">
+            {data?.map((service) => (
               <ServicesCard key={service._id} service={service} />
             ))}
           </div>
+)}
+
+
+      
         </>
       )}
     </div>

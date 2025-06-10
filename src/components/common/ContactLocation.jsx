@@ -34,7 +34,7 @@ export default function ContactLocation() {
               <div className="flex items-center gap-3">
                 <FaEnvelope className=" text-orange-500  p-1" size={26} />
                 <span>
-                  <span className="font-medium">Email:</span> piercingsodermalm@gmail.com
+                  <span className="font-medium">Email:</span> klippsodermalm1@gmail.com
                 </span>
               </div>
             </div>

@@ -53,7 +53,7 @@ const Review = () => {
           {testimonials?.map((testimonial) => (
             <SwiperSlide key={testimonial._id}>
               <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-6 text-white shadow-lg mx-3 h-full flex flex-col justify-between transition-all hover:scale-105 duration-300">
-                <FaQuoteLeft className="text-3xl text-primary mb-4" />
+                <FaQuoteLeft className="text-3xl  mb-4" />
                 <p className="italic mb-6">"{testimonial.review}"</p>
                 <div className="mt-auto">
                   <h3 className="font-semibold text-lg">{testimonial.name}</h3>

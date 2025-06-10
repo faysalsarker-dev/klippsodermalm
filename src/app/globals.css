@@ -1,11 +1,17 @@
 @import "tailwindcss";
 @plugin "daisyui";
 @plugin "@tailwindcss/typography";
+
+
+
+
+
+
 :root {
   --background: #1F1F1F;
   --background-secondary: #0F0F0F;
   --foreground: #171717;
-  /* --primary: #D6A354; */
+  --primary-color: #D6A354;
   --primary: linear-gradient(to right, #f97316, #facc15);
 }
 

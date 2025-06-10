@@ -18,7 +18,7 @@ export default function page() {
         <div className="hero-overlay"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-xl">
-            <h1 className="text-4xl font-bold drop-shadow mb-3">Piercing med Nål i Stockholm</h1>
+            <h1 className="text-4xl font-bold drop-shadow mb-3 text-primary">Piercing med Nål i Stockholm</h1>
             <p className="text-lg">
               Letar du efter säker och professionell piercing med nål i Stockholm? Hos Klipp Södermalm får du en trygg behandling av erfarna piercare – mitt på Södermalm.
             </p>
@@ -38,7 +38,7 @@ export default function page() {
 
         {/* Services List */}
         <section>
-          <h2 className="text-2xl font-semibold mb-6 text-center">Våra nålpiercingstjänster</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-center">Piercing med Nål</h2>
           <ServicesList category={`needles piercing`} />
         </section>
 

@@ -55,8 +55,7 @@ export default function AboutPage() {
             <p>
               Vi har varit en trygg och etablerad salong i över 25 år, och är
               kända för vår snabba service, noggrannhet och omtanke om varje
-              kund. Hos oss är alla välkomna – oavsett ålder eller tidigare
-              erfarenhet.
+              kund. Hos oss är alla välkomna – oavsett åldereller tidigare erfarenhet.
             </p>
           </div>
         </div>

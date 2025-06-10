@@ -3,27 +3,36 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
-  const services = [
+    const services = [
     {
-      name: "Needle Piercing",
-      description: "Precise and hygienic needle piercings performed with expert technique for a clean, professional result.",
-      icon: "/needls.png",
+      name: "Nålpiercing",
+      icon: "/needlepiercing.jpg",
       path:'/needle-piercing'
     },
     {
-      name: "Gun Piercing",
-      description: "Quick and stylish piercings using sterilized piercing guns for a safe and trendy experience.",
-      icon: "/gun.png",
+      name: "Piercing med pistol",
+      icon: "/piercingwithgun.jpg",
             path:'/gun-piercing'
 
     },
     {
-      name: "Microneedling",
-      description: "Boost skin health and glow with advanced microneedling sessions tailored for rejuvenation.",
-      icon: "/microneedls.png",
+      name: "Mikronålning",
+      icon: "/microneediling.png",
             path:'/microneedling'
     },
+    {
+      name: "Lash Lift & Brow Lift – Naturlig skönhet med lyft",
+      icon: "/lashift.jpg",
+            path:'/lash-lift'
+    },
+    {
+      name: "Klassisk Maskinklippt Herrfrisyr",
+      description: "Vi erbjuder enbart standardfrisyrer med maskin – korta sidor, snygg nacke och längre upptill för en ren och tidlös look",
+      icon: "/haircut.jpg",
+            path:'/herrfrisyr'
+    },
   ];
+
 
 
 
@@ -62,9 +71,9 @@ const ServiceRequiredNotice = () => {
       <Image
         src={service.icon}
         alt={service.name}
-        width={40}
-        height={40}
-        className="object-contain"
+        width={80}
+        height={50}
+        className="object-contain rounded-lg"
       />
       <h3 className="text-lg md:text-xl font-semibold text-white">{service.name}</h3>
     </div>

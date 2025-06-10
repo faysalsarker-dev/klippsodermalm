@@ -26,16 +26,40 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
+              <motion.h2
+               initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+              
+              className="text-xl md:text-5xl font-bold leading-tight ">
+            Välkommen till
+          </motion.h2>
           <motion.h1
-            className="mb-2 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight"
+          className="mb-1 text-5xl md:text-7xl font-bold  bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent"
+
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-         Klipp Södermalm - Din skönhetssalong i hjärtat av Södermalm
+       Klipp Södermalm 
+         
+         
 
 
           </motion.h1>
+          <motion.h2
+            className="mb-2 text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+          >
+  
+         
+          Din skönhetssalong i hjärtat av Södermalm
+
+
+          </motion.h2>
+          
        
 
           <motion.p
@@ -44,7 +68,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
-   Professionell piercing, öronhåltagning, microneedling, lash lift & hår - proffsigt och tryggt i en modern och välkomnande miljo.
+   Professionell piercing, öronhåltagning, microneedling, lash lift & hår - proffsigt och tryggt i en modern och välkomnande miljö
           </motion.p>
 
           <motion.div

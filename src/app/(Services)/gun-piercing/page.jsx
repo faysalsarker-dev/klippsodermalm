@@ -18,7 +18,8 @@ export default function page() {
         <div className="hero-overlay"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-xl">
-            <h1 className="text-4xl font-bold drop-shadow mb-3">Öronhåltagning med Pistol i Stockholm</h1>
+            <h1 className="text-4xl font-bold drop-shadow mb-3 text-primary">Öronhåltagning med Pistol i Stockholm</h1>
+            <h2 className="text-3xl font-bold drop-shadow mb-3 text-red-600">Barn & Vuxna</h2>
             <p className="text-lg">
              Vill du göra hål i öronen snabbt och enkelt? Hos Klipp Södermalm erbjuder vi trygg och skonsam öronhåltagning med pistol i Stockholm. Perfekt för både barn och vuxna!
 
@@ -47,7 +48,7 @@ export default function page() {
 
         {/* Aftercare Tips */}
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Det här får du hos oss:</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-primary">Det här får du hos oss:</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Snabb öronhåltagning i Stockholm</li>
             <li>Passar alla åldrar – barn, ungdomar och vuxna</li>

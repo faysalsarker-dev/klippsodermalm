@@ -9,6 +9,7 @@ import  axiosInstance  from '@/app/lib/axios';
 
 import { Suspense } from "react";
 import { format, isToday, parseISO } from 'date-fns';
+import OfferBanners from "@/components/common/OfferBanners";
 
 const filterAvailableSlots = ({ slots, isDayOff }, selectedDate) => {
   if (isDayOff) {
@@ -82,16 +83,22 @@ const today = new Date();
     : [];
 
   return (
-    <div className="min-h-screen py-10 px-4 md:px-10 flex flex-col gap-8 md:flex-row justify-center items-start bg-background-secondary">
+    <div className="min-h-screen  bg-background-secondary">
       {/* Date Picker */}
-      <div className="w-full md:w-1/2 bg-background rounded-2xl shadow-md p-6 flex flex-col items-center">
-        <h2 className="text-2xl font-semibold mb-4 text-center">Select Booking Date</h2>
+  
+
+
+
+
+      <div className="py-10 px-4 md:px-10 flex flex-col gap-8 md:flex-row justify-center items-start">
+    <div className="w-full md:w-1/2 bg-background rounded-2xl shadow-md p-6 flex flex-col items-center">
+        <h2 className="text-2xl font-semibold mb-4 text-center">Välj Bokningsdatum</h2>
         <DayPicker
           mode="single"
           animate={true}
                 classNames={{
             ...classNames,
-            selected: "bg-primary rounded-lg font-bold text-white",
+            selected: "bg-gradient-to-r from-orange-500 to-yellow-300 rounded-lg font-bold text-white",
             today: "text-blue-600 ",
 
           }}
@@ -107,6 +114,13 @@ const today = new Date();
              <Slots date={date}  slotdetails={{ ...slotdetails, slots: filteredSlots }} isLoading={isLoading} isError={isError} refetch={refetch} />
 
       </Suspense>
+
+      </div>
+
+
+
+<section><OfferBanners /></section>
+
     </div>
   );
 };
