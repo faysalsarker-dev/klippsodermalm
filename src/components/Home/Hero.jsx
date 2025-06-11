@@ -5,7 +5,7 @@ import { Link as ScrollLink } from "react-scroll";
 
 const Hero = () => {
   return (
-    <div className="relative min-h-screen flex items-center justify-center">
+    <div className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center">
       {/* Background image */}
       <Image
         src='/hero.jpg'

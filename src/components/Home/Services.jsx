@@ -45,31 +45,40 @@ export default function Services() {
     
      
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-        <Link href={service?.path} key={index}>
-              <motion.div
-                className="bg-background border card border-neutral-700 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2, duration: 0.6, ease: "easeInOut" }}
-              >
-                <div className="flex justify-center mb-4">
-                  <Image
-                    src={service.icon}
-                    alt={service.name}
-                    width={400}
-                    height={200}
-                    className="object-contain rounded-lg"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold mb-2 text-primary">{service.name}</h3>
-                <p className="text-sm text-muted-foreground">{service.description}</p>
-              </motion.div>
-        </Link>
-          ))}
-        </div>
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {services.map((service, index) => (
+    <Link href={service?.path} key={index} legacyBehavior>
+      <a className="block">
+        <motion.div
+          className="bg-background border border-neutral-700 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300 h-full"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.2, duration: 0.6, ease: "easeInOut" }}
+        >
+          <div className="flex justify-center items-center mb-4 h-40 md:h-48">
+            <Image
+              src={service.icon}
+              alt={service.name}
+              width={400}
+              height={200}
+              className="object-cover rounded-lg max-h-full"
+            />
+          </div>
+          <h3 className="text-xl font-semibold mb-2 text-primary text-center">
+            {service.name}
+          </h3>
+          <p className="text-sm text-muted-foreground text-center">
+            {service.description}
+          </p>
+        </motion.div>
+      </a>
+    </Link>
+  ))}
+</div>
+
+
+
       </div>
     </section>
   );

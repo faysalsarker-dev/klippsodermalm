@@ -2,9 +2,9 @@ import OfferBanners from "@/components/common/OfferBanners";
 import ServicesList from "@/components/common/ServicesList";
 
 export const metadata = {
-  title: "Öronhåltagning med Pistol i Stockholm – För Barn & Vuxna",
+  title: "Klassisk Maskinklippt Herrfrisyr – Ren & Tidlös Stil",
   description:
-    "Snabb och trygg öronhåltagning med pistol i Stockholm. Perfekt för barn och vuxna. Besök Klipp Södermalm – din lokala piercingstudio på Södermalm.",
+    "Vi erbjuder standardfrisyrer med maskin: korta sidor, snygg nacke och längre upptill för en ren och tidlös look. Perfekt för en välvårdad herrstil.",
 };
 
 export default function page() {

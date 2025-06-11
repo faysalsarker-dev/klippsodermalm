@@ -2,9 +2,9 @@ import OfferBanners from "@/components/common/OfferBanners";
 import ServicesList from "@/components/common/ServicesList";
 
 export const metadata = {
-  title: "Piercing med Nål i Stockholm – Trygg & Professionell | Klipp Södermalm",
+  title: "Lash Lift & Brow Lift i Stockholm – Naturlig skönhet utan smink",
   description:
-    "Säker och hygienisk piercing med nål i Stockholm. Vi erbjuder näspiercing, navelpiercing & öronpiercing med nål på Södermalm. Boka tid enkelt online!",
+    "Få vackert böjda fransar och perfekt formade bryn utan smink. Professionella och skonsamma behandlingar i Stockholm som lyfter fram din naturliga skönhet.",
 };
 
 export default function page() {
