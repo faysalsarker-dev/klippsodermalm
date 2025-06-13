@@ -145,8 +145,16 @@ export default function page() {
   <h2 className="text-xl font-semibold text-primary mb-4">Kontakta oss</h2>
   <div className="space-y-3">
     <p> <strong>E-post:</strong> <a href="mailto:klippsodermalm1@gmail.com" className="link link-primary">klippsodermalm1@gmail.com</a></p>
-    <p>📞 <strong> Telefon:</strong> <a href="tel:08-6415057" className="link">08-6415057</a></p>
-    <p>📍 <strong> Adress:</strong><br />KlippSödermalm<br />Åsögatan 128<br />11624 Stockholm, Sverige</p>
+    <p>📞 <strong> Telefon:</strong>   <span>
+                 <a href="tel:086415057" className=" hover:underline">
+                    <span className="font-medium"></span> 08-6415057 </a>
+                  eller
+                 <a href="tel:0739842237" className=" hover:underline">
+                    <span className="font-medium"></span> 0739-842237 </a>
+                  </span></p>
+    <p>📍 <strong> Adress:</strong><br />Klipp Södermalm 
+Åsögatan 128 
+  <br />Åsögatan 128<br />11624 Stockholm, Sweden</p>
     <p> <strong>Öppettider:</strong><br />Mån–Fre: 10:00–18:00<br />Lördag: 10:00–15:00<br />Söndag: Stängt</p>
   </div>
 </div>
@@ -155,7 +163,7 @@ export default function page() {
 <div className="w-full h-80 overflow-hidden  mt-20">
   <iframe
     className="w-full h-full"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.858189926092!2d-74.00601508459465!3d40.71277597933142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjAiTiA3NMKwMDAnMjYuMiJX!5e0!3m2!1sen!2sbd!4v1616161616161"
+ src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2036.1779290477377!2d18.0775879!3d59.3132858!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f77fcd11d453d%3A0xeabf111cb28a4da0!2sPiercing%20S%C3%B6dermalm!5e0!3m2!1ssv!2sbd!4v1744034781667!5m2!1ssv!2sbd"
     allowFullScreen
     loading="lazy"
   ></iframe>

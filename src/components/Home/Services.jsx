@@ -47,8 +47,8 @@ export default function Services() {
 
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
   {services.map((service, index) => (
-    <Link href={service?.path} key={index} legacyBehavior>
-      <a className="block">
+    <Link href={service?.path} key={index}>
+      <div className="block">
         <motion.div
           className="bg-background border border-neutral-700 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300 h-full"
           initial={{ opacity: 0, y: 30 }}
@@ -72,7 +72,7 @@ export default function Services() {
             {service.description}
           </p>
         </motion.div>
-      </a>
+      </div>
     </Link>
   ))}
 </div>
