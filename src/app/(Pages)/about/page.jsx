@@ -48,14 +48,16 @@ export default function AboutPage() {
           </div>
           <div className="md:w-1/2 space-y-4 text-base leading-relaxed">
             <p>
-              Välkommen till <span className="font-semibold text-primary">Klipp Södermalm</span> – din professionella och prisvärda salong med
-              fokus på piercing, öronhåltagning och microneedling i hjärtat av
-              Södermalm.
+
+
+Välkommen till <span className="font-semibold text-primary">Klipp Södermalm</span> - din professionella och prisvärda salong med fokus på piercing, öronhåltagning och microneedling i hjärtat av Södermalm
+
+
+           
             </p>
             <p>
-              Vi har varit en trygg och etablerad salong i över 25 år, och är
-              kända för vår snabba service, noggrannhet och omtanke om varje
-              kund. Hos oss är alla välkomna – oavsett åldereller tidigare erfarenhet.
+      Vi har varit en trygg och etablerad salong i över 25 år, och är kända för vår snabba service, noggrannhet och omtanke om varje kund. Hos oss är alla välkomna - oavsett äldre.
+
             </p>
           </div>
         </div>

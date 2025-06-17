@@ -2,8 +2,7 @@
 const nextConfig = {
   images: {
     domains: [
-      'img.freepik.com',
-      'impro.usercontent.one',
+      
       'klippsodermalm.com',
       'piercing-backend.vercel.app',
       'testing.pieringsodermalm.com',
@@ -12,21 +11,6 @@ const nextConfig = {
       'backend.piercingsodermalm.se'
     ],
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'img.freepik.com',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'impro.usercontent.one',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'klippsodermalm.com',
-        pathname: '/**',
-      },
       {
         protocol: 'http',
         hostname: 'localhost',

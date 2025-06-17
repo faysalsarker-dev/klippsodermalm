@@ -15,6 +15,7 @@ import Faq from "@/components/common/Faq";
 import ReviewList from "@/components/common/ReviewList";
 import OfferBanners from "@/components/common/OfferBanners";
 import Chat from "@/components/Home/Chat";
+import GoogleRating from "@/components/common/GoogleRating";
 
 export default function Home() {
   return (
@@ -52,7 +53,9 @@ export default function Home() {
         <section>
           <Services />
         </section>
-
+<section>
+  <GoogleRating/>
+</section>
         <section>
           <Gallery />
         </section>

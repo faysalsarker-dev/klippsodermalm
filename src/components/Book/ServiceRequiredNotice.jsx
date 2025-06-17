@@ -3,25 +3,29 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
-    const services = [
+  const services = [
     {
-      name: "Nålpiercing",
+      name: "Piercing med nål",
+      description: "Vi gör piercing med nål för bättre precision och snabbare läkning. Passar för navelpiercing, näspiercing, och öronpiercing i Stockholm.",
       icon: "/needlepiercing.jpg",
       path:'/needle-piercing'
     },
     {
-      name: "Piercing med pistol",
-      icon: "/piercingwithgun.jpg",
+      name: "Öronhåltagning för vuxna & barn i alla åldrar – Södermalm, Stockholm",
+      description: "Snabb, trygg och skonsam håltagning med pistol. Vi är erfarna på håltagning för barn i alla åldrar.",
+      icon: "/s2.jpeg",
             path:'/gun-piercing'
 
     },
     {
-      name: "Mikronålning",
+      name: "Micro Needling",
+      description: "Vår microneedling-behandling hjälper huden att se friskare och slätare ut. Bra för dig med ärr, stora porer eller trött hud.",
       icon: "/microneediling.png",
             path:'/microneedling'
     },
     {
       name: "Lash Lift & Brow Lift – Naturlig skönhet med lyft",
+      description: "Få vackert böjda fransar och perfekt formade bryn – helt utan smink. Vi lyfter fram din naturliga skönhet med skonsamma och professionella behandlingar",
       icon: "/lashift.jpg",
             path:'/lash-lift'
     },
@@ -48,11 +52,9 @@ const ServiceRequiredNotice = () => {
         <span className="text-yellow-600 text-xl">⚠️</span>
         <div>
           <h2 className="text-yellow-800 text-lg font-semibold mb-1">
-            Select a Service to Continue
+           Välj din behandling och boka nu
           </h2>
-          <p className="text-yellow-700 text-sm">
-            Please select one of the services from the table below to proceed with booking.
-          </p>
+       
         </div>
       </div>
 

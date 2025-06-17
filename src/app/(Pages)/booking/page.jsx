@@ -6,10 +6,25 @@ import classNames from "react-day-picker/dist/style.css";
 import { useQuery } from "@tanstack/react-query";
 import Slots from "@/components/Book/Slots";
 import  axiosInstance  from '@/app/lib/axios';
+import { sv } from 'date-fns/locale';
 
 import { Suspense } from "react";
 import { format, isToday, parseISO } from 'date-fns';
 import OfferBanners from "@/components/common/OfferBanners";
+
+
+
+
+
+const customSwedishLocale = {
+  ...sv,
+  options: {
+    ...sv.options,
+    weekStartsOn: 1,
+  },
+};
+
+
 
 const filterAvailableSlots = ({ slots, isDayOff }, selectedDate) => {
   if (isDayOff) {
@@ -92,7 +107,7 @@ const today = new Date();
 
       <div className="py-10 px-4 md:px-10 flex flex-col gap-8 md:flex-row justify-center items-start">
     <div className="w-full md:w-1/2 bg-background rounded-2xl shadow-md p-6 flex flex-col items-center">
-        <h2 className="text-2xl font-semibold mb-4 text-center">Välj Bokningsdatum</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-center text-primary">Boka Tid</h2>
         <DayPicker
           mode="single"
           animate={true}
@@ -106,6 +121,7 @@ const today = new Date();
           selected={date}
           onSelect={handleDateSelect}
           disabled={(d) => d < today}
+          locale={customSwedishLocale}
         />
       </div>
 

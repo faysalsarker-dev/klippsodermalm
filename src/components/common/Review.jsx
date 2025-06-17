@@ -34,37 +34,58 @@ const Review = () => {
 
 
       <div className="max-w-6xl mx-auto my-20">
-        <h2 className="text-4xl font-bold text-center text-white mb-12 uppercase tracking-wide">
-          Vad våra kunder säger
-        </h2>
 
-        <Swiper
-          slidesPerView={1}
-          breakpoints={{
-            768: { slidesPerView: 1, spaceBetween: 20 },
-            1024: { slidesPerView: 2, spaceBetween: 30 },
-          }}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
-          pagination={{ clickable: true }}
-          loop={true}
-          modules={[Autoplay, Pagination]}
-          className="w-full"
-        >
-          {testimonials?.map((testimonial) => (
-            <SwiperSlide key={testimonial._id}>
-              <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-6 text-white shadow-lg mx-3 h-full flex flex-col justify-between transition-all hover:scale-105 duration-300">
-                <FaQuoteLeft className="text-3xl  mb-4" />
-                <p className="italic mb-6">"{testimonial.review}"</p>
-                <div className="mt-auto">
-                  <h3 className="font-semibold text-lg">{testimonial.name}</h3>
-                  <div className="mt-1">
-               
-                  </div>
+
+<h2 className="text-3xl font-bold text-center text-primary  mb-8">
+     Recensioner från våra kunder
+      </h2>
+
+      {/* Swiper Carousel */}
+      <Swiper
+        slidesPerView={1}
+        breakpoints={{
+          768: { slidesPerView: 2, spaceBetween: 20 }, // Show 2 reviews on medium screens
+          1024: { slidesPerView: 3, spaceBetween: 30 }, // Show 3 reviews on large screens
+        }}
+        autoplay={{ delay: 1000, disableOnInteraction: false }}
+        pagination={{ clickable: true }}
+        loop={true}
+        modules={[Autoplay, Pagination]}
+        className="w-full"
+      >
+        {testimonials?.map((testimonial) => (
+          <SwiperSlide key={testimonial._id}>
+            <div className="card bg-background-secondary   backdrop-blur-xl border border-white/20 rounded-xl p-6 text-white shadow-lg  transition-all hover:scale-105 duration-300">
+              <div className="flex flex-col items-center">
+                <FaQuoteLeft className="text-yellow-400 text-4xl mb-3" />
+                <p className="text-gray-300 text-lg italic text-center">
+                  "{testimonial?.review}"
+                </p>
+              </div>
+
+              <div className="flex flex-col items-center mt-6">
+                <img
+                  src={testimonial?.image}
+                  alt={testimonial?.name}
+                  loading="lazy"
+                  className="w-16 h-16 rounded-full border-2 border-primary"
+                />
+                <h3 className="font-semibold text-lg mt-2">{testimonial?.name}</h3>
+                <div className=" text-yellow-400">
+                <Rating
+        initialRating={testimonial?.rating} // Initial rating  
+        emptySymbol={<FaRegStar className="text-yellow-400" />} // Empty star
+        fullSymbol={<FaStar className="text-yellow-400" />} // Full star
+        fractions={2} 
+        readonly={true} 
+      />
                 </div>
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
       </div>
      
      

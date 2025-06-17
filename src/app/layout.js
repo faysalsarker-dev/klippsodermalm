@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" >
       <body
-        className={`${oswald.variable} font-sans antialiased overflow-x-hidden`}
+        className={`${oswald.className} font-sans antialiased overflow-x-hidden`}
       >
         <Navbar/>
         <QueryProvider>

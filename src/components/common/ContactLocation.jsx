@@ -29,7 +29,7 @@ export default function ContactLocation() {
                 <FaPhoneAlt className="text-orange-500" size={26} />
                 <span>
                  <a href="tel:086415057" className=" hover:underline">
-                    <span className="font-medium"></span> 08-6415057 </a>
+                    <span className="font-medium"></span> 08-6415057   </a>,
                     <br />
                  <a href="tel:0739842237" className=" hover:underline">
                     <span className="font-medium"></span> 0739-842237 </a>

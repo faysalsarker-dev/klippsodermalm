@@ -44,7 +44,7 @@ export default function page() {
 
         {/* Aftercare Tips */}
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Vad vi erbjuder:
+          <h2 className="text-2xl font-semibold mb-4 text-primary">Vad vi erbjuder:
 Näspiercing med nål</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Näspiercing med nål</li>
@@ -56,7 +56,7 @@ Näspiercing med nål</h2>
 
         {/* Why Choose Us */}
         <section>
-          <h2 className="text-2xl font-semibold mb-6">Varför välja oss?</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-primary">Varför välja oss?</h2>
           <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
       
           

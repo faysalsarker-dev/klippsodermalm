@@ -5,20 +5,20 @@ import Link from "next/link";
 export default function Services() {
   const services = [
     {
-      name: "Nålpiercing",
-      description: "Vi gör piercing med nål för bättre precision och snabbare läkning. Passar för navelpiercing, näspiercing, och öronpiercing i Stockholm.",
+      name: "Piercing med nål",
+      description: "Vi utför piercing med nål för maximal precision, skonsammare håltagning och snabbare läkning. Perfekt för navelpiercing, näspiercing och öronpiercing",
       icon: "/needlepiercing.jpg",
       path:'/needle-piercing'
     },
     {
-      name: "Piercing med pistol",
-      description: "Vi erbjuder öronhåltagning i Stockholm med pistol – ett snabbt och enkelt val, särskilt för barn och örsnibbar.",
-      icon: "/piercingwithgun.jpg",
+      name: "Öronhåltagning för vuxna & barn i alla åldrar – Södermalm, Stockholm",
+      description: "Snabb, trygg och skonsam håltagning med pistol. Vi är erfarna på håltagning för barn i alla åldrar.",
+      icon: "/s2.jpeg",
             path:'/gun-piercing'
 
     },
     {
-      name: "Mikronålning",
+      name: "Micro Needling",
       description: "Vår microneedling-behandling hjälper huden att se friskare och slätare ut. Bra för dig med ärr, stora porer eller trött hud.",
       icon: "/microneediling.png",
             path:'/microneedling'
@@ -56,12 +56,12 @@ export default function Services() {
           viewport={{ once: true }}
           transition={{ delay: index * 0.2, duration: 0.6, ease: "easeInOut" }}
         >
-          <div className="flex justify-center items-center mb-4 h-40 md:h-48">
+          <div className="flex justify-center items-center mb-4 h-48 md:h-48">
             <Image
               src={service.icon}
               alt={service.name}
               width={400}
-              height={200}
+              height={300}
               className="object-cover rounded-lg max-h-full"
             />
           </div>

@@ -33,7 +33,7 @@ const navItems = [
   { name: 'Öronhåltagning', path: '/gun-piercing' },
   { name: 'Micro Needling', path: '/microneedling' },
   { name: 'Lash Lift', path: '/lash-lift' },
-  { name: 'Herrfrisyr', path: '/herrfrisyr' },
+  { name: 'Herrklippning', path: '/herrfrisyr' },
   { name: 'Om oss', path: '/about' },
   // { name: 'Book', path: '/booking' },
   { name: 'Bloggar', path: '/blog' },
