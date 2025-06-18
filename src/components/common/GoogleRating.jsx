@@ -7,7 +7,7 @@ export default function GoogleRating() {
     <section className="bg-neutral-500 dark:bg-gray-900 py-12 px-4 sm:px-8 mb-10">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-primary dark:text-white mb-4">
-          Fantastiskt betyg på Google
+          Våra recensioner
         </h2>
         <p className="text-lg text-white mb-6">
           Våra kunder har gett oss <span className="font-semibold text-black dark:text-white">4.8 av 5</span> i betyg på Google för våra tjänster.

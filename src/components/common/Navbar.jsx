@@ -29,8 +29,8 @@ const Navbar = () => {
 
 const navItems = [
   { name: 'Hem', path: '/' },
-  { name: 'Piercing', path: '/needle-piercing' },
-  { name: 'Öronhåltagning', path: '/gun-piercing' },
+  { name: 'Piercing med nål', path: '/needle-piercing' },
+  { name: 'Öronhåltagning med pistol', path: '/gun-piercing' },
   { name: 'Micro Needling', path: '/microneedling' },
   { name: 'Lash Lift', path: '/lash-lift' },
   { name: 'Herrklippning', path: '/herrfrisyr' },

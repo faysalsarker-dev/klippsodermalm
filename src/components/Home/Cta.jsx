@@ -18,7 +18,7 @@ const Cta = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center ">
-        <h2 className="text-4xl sm:text-5xl font-extrabold mb-6">Boka Din Tid hos Klipp Södermalm Idag</h2>
+        <h2 className="text-4xl sm:text-5xl font-extrabold mb-6">Boka din tid hos Klipp Södermalm idag</h2>
         <p className="text-lg sm:text-xl mb-8">
         Redo för en ny piercing, lash lift eller hårklippning i Stockholm?
 Vi erbjuder trygga behandlingar med erfarna specialister på Södermalm.

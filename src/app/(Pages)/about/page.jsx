@@ -56,7 +56,7 @@ Välkommen till <span className="font-semibold text-primary">Klipp Södermalm</s
            
             </p>
             <p>
-      Vi har varit en trygg och etablerad salong i över 25 år, och är kända för vår snabba service, noggrannhet och omtanke om varje kund. Hos oss är alla välkomna - oavsett äldre.
+      Vi har varit en trygg och etablerad salong i över 25 år, och är kända för vår snabba service, noggrannhet och omtanke om varje kund. Hos oss är alla välkomna - Oavsett ålder.
 
             </p>
           </div>

@@ -18,9 +18,9 @@ export default function page() {
         <div className="hero-overlay"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-xl">
-            <h1 className="text-4xl font-bold drop-shadow mb-3 text-primary">Lash Lift & Brow Lift – Naturlig skönhet med lyft</h1>
+            <h1 className="text-4xl font-bold drop-shadow mb-3 text-primary">Lash Lift & Brow Lift i Stockholm – Naturlig skönhet utan smink</h1>
             <p className="text-lg">
-              Få vackert böjda fransar och perfekt formade bryn – helt utan smink. Vi lyfter fram din naturliga skönhet med skonsamma och professionella behandlingar
+             Upplev Lash Lift och Brow Lift på Södermalm för vackert böjda fransar och välformade bryn – helt utan mascara eller smink. Vi erbjuder skonsamma behandlingar som lyfter fram din naturliga skönhet med professionell teknik och trygg salongsmiljö
             </p>
           </div>
         </div>
@@ -41,17 +41,6 @@ export default function page() {
           <h2 className="text-2xl font-semibold mb-6 text-center">Lash Lift & Brow Lift</h2>
           <ServicesList category={`lash lift`} />
         </section>
-
-        <section>
-  <h2 className="text-2xl font-semibold mb-4 text-primary">Vad vi erbjuder:</h2>
-  <ul className="list-disc list-inside space-y-2">
-    <li>Näspiercing med nål</li>
-    <li>Navelpiercing med nål</li>
-    <li>Öronpiercing med nål (helix, tragus, conch m.m.)</li>
-    <li>Piercing i Stockholm för både kvinnor och män</li>
-    <li>Lash Lift & Brow Lift för naturligt markerade ögon</li>
-  </ul>
-</section>
 
 {/* Lash Lift & Brow Lift Section */}
 <section className="mt-8">

@@ -18,9 +18,12 @@ export default function page() {
         <div className="hero-overlay"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-xl">
-            <h1 className="text-4xl font-bold drop-shadow mb-3 text-primary">Microneedling i Stockholm – För Friskare Hud</h1>
+            <h1 className="text-4xl font-bold drop-shadow mb-3 text-primary">
+              Microneedling – för friskare och yngre hy
+            </h1>
             <p className="text-lg">
-           Vill du ha jämnare, fräschare och yngre hud? På Klipp Södermalm erbjuder vi professionell microneedling i Stockholm – en beprövad behandling som stärker din hud på naturligt sätt
+     Önskar du ha en jämnare, fräschare och yngre hy?
+Hos oss på Klipp Södermalm erbjuder vi professionell microneedling – en beprövad behandling som stärker och föryngrar huden på ett naturligt sätt.
             </p>
           </div>
         </div>

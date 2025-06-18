@@ -88,7 +88,7 @@ const status = info.status === 'confirmed' ? 'cancelled' : info.status === 'canc
         <div>
                <div className="grid md:grid-cols-2 gap-6">
                          
-                {bookings.map((b) => {
+                {bookings?.map((b) => {
                   const bookingDateTime = parseISO(`${b.bookingDate}T${b.slot}:00`);
                   const cancelDeadline = subHours(bookingDateTime, 2);
                   const canCancel = isBefore(now, cancelDeadline);
@@ -96,14 +96,14 @@ const status = info.status === 'confirmed' ? 'cancelled' : info.status === 'canc
                   return (
                     <div
                       key={b._id}
-                      className="relative bg-background bg-opacity-30 backdrop-blur-md border border-primary rounded-xl shadow-lg p-6 transition-transform hover:scale-[1.03] duration-300"
+                      className="relative bg-background bg-opacity-30 backdrop-blur-md border border-[#D6A354] rounded-xl shadow-lg p-6 transition-transform hover:scale-[1.03] duration-300"
                     >
                       {/* Date Badge */}
                       <div className="absolute top-5 right-5 text-center rounded-md overflow-hidden shadow-md select-none w-16">
-                        <div className="bg-primary text-white py-1 text-xs font-semibold tracking-wide">
+                        <div className="bg-[#D6A354] text-white py-1 text-xl font-semibold tracking-wide">
                           {format(parseISO(b.bookingDate), 'MMM')}
                         </div>
-                        <div className="bg-white bg-opacity-70 text-primary py-1 text-2xl font-extrabold">
+                        <div className=" text-black bg-white py-1 text-2xl font-extrabold">
                           {format(parseISO(b.bookingDate), 'dd')}
                         </div>
                       </div>

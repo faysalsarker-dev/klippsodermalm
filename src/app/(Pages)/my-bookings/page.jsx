@@ -45,9 +45,9 @@ export default function page() {
 
   return (
     <div className=" p-6 bg-background-secondary min-h-screen">
-      <h2 className="text-3xl font-bold text-center mb-4">My Bookings</h2>
+      <h2 className="text-3xl font-bold text-center mb-4">Mina bokningar</h2>
       <p className="text-center mb-8 text-gray-200">
-        You can cancel your booking up to 2 hours before the scheduled time.
+      Du kan avboka din bokning upp till 2 timmar före den schemalagda tiden.
       </p>
 <div className="max-w-4xl mx-auto">
     

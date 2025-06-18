@@ -27,7 +27,7 @@ const Gallery = () => {
 
   return (
     <section className="px-6 sm:px-10 md:px-16 py-16 mx-auto">
-      <h2 className="text-4xl font-bold text-center mb-12">Piercing Perfection: Vårt fantastiska galleri</h2>
+      <h2 className="text-4xl font-bold text-center mb-12">Galleri</h2>
 
       <Masonry
         breakpointCols={breakpoints}

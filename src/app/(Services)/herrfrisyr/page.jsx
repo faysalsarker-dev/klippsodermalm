@@ -61,9 +61,7 @@ export default function page() {
 <section>
   <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
     <div className="card bg-background shadow-md p-5">
-      <p>
-        Vi är experter på klassiska herrfrisyrer med maskin – en stilren lösning för dig som vill ha ett välvårdat utseende utan krångel. Hos oss får du en klippning som både känns modern och tidlös.
-      </p>
+    
       <p className="mt-3">
         Besök vår salong på Södermalm eller boka din tid online – vi ser fram emot att ge dig en frisyr som passar just dig.
       </p>

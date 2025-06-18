@@ -20,9 +20,7 @@ export default function ContactLocation() {
               <div className="flex items-center gap-3">
                 <FaMapMarkerAlt className="text-orange-500" size={26} />
                 <span>
-                  <span className="font-medium"></span>Klipp Södermalm 
-Åsögatan 128 
-11624 Stockholm, Sweden 
+                  <span className="font-medium"></span>Klipp Södermalm, Åsögatan 128 11624 Stockholm, Sweden 
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -30,7 +28,7 @@ export default function ContactLocation() {
                 <span>
                  <a href="tel:086415057" className=" hover:underline">
                     <span className="font-medium"></span> 08-6415057   </a>,
-                    <br />
+                    
                  <a href="tel:0739842237" className=" hover:underline">
                     <span className="font-medium"></span> 0739-842237 </a>
                   </span>

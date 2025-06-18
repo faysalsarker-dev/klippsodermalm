@@ -11,7 +11,7 @@ export default function Services() {
       path:'/needle-piercing'
     },
     {
-      name: "Öronhåltagning för vuxna & barn i alla åldrar – Södermalm, Stockholm",
+      name: "Öronhåltagning för vuxna & barn i alla åldrar ",
       description: "Snabb, trygg och skonsam håltagning med pistol. Vi är erfarna på håltagning för barn i alla åldrar.",
       icon: "/s2.jpeg",
             path:'/gun-piercing'
